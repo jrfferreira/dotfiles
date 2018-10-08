@@ -27,7 +27,7 @@ brew cask install wireshark
 
 # python
 brew install python
-brew install pyenv``
+brew install pyenv
 brew install mypy
 brew install black
 pyenv install 3.6.5 && pyenv global 3.6.5

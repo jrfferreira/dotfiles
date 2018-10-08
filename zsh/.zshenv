@@ -12,6 +12,5 @@ export GOPATH=$WORKON_HOME/go
 export GOROOT=$(go env GOROOT)
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 export PSQL=/Applications/Postgres.app/Contents/Versions/9.6
-export PYTHONPATH=$HOME/Code/BISYS/python
 export PATH="/usr/bin:/bin:/usr/sbin:/sbin:$GOPATH/bin:$GOROOT/bin:$PSQL/bin:$PATH:$PYTHONPATH:$HOME/.pyenv/bin:/usr/local/bin"
 export JAVA_HOME=$(/usr/libexec/java_home)
