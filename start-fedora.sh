@@ -1,6 +1,13 @@
-#/bin/bash
+#!/bin/bash
+sudo dnf update
+sudo dnf upgrade
+
+sudo dnf install emacs
+sudo dnf install zsh
+
 sudo dnf install arc-theme
-sudo dnf install gnome-tweak
+sudo dnf install gnome-tweak-tool
+sudo dnf install chrome-gnome-shell
 sudo dnf install snapd
 
 sudo ln -s /var/lib/snapd/snap /snap
@@ -10,11 +17,19 @@ sudo dnf install -y gcc zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlit
 sudo dnf copr enable evana/fira-code-fonts
 sudo dnf install fira-code-fonts
 
-sudo snap install telegram
+sudo snap install telegram-desktop
 sudo snap install spotify
 sudo snap install slack --classic
 
 sudo dnf install golang
+
+git config --global user.email "jr8116@gmail.com"
+
+# base folders
+mkdir ~/Code
+
+# dconf
+dconf load / < gnome.dconf
 
 # pyenv
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
@@ -34,3 +49,10 @@ git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-
 # npm modules
 nvm install stable && nvm use stable
 npm install -g flow tern eslint prettier babel-eslint eslint-plugin-react js-beautify eslint-plugin-mocha eslint-plugin-flowtype eslint-plugin-jasmine eslint-plugin-jsx-control-statements eslint-plugin-promise eslint-plugin-jest eslint-plugin-import eslint-plugin-prettier eslint-config-prettier
+
+
+# emacs
+mv .emacs.d .emacs.d.bak
+mv .emacs .emacs.bak
+git clone https://github.com/jrfferreira/emacs-config ~/Code/emacs-config
+ln -s ~/Code/emacs-config .emacs.d
