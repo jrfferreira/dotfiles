@@ -18,8 +18,21 @@ sleep-inactive-ac-type='suspend'
 sleep-inactive-battery-timeout=1800
 
 [org/gnome/settings-daemon/plugins/color]
+night-light-schedule-automatic=true
 night-light-enabled=true
 night-light-last-coordinates=(51.508499999999998, -0.12570000000000001)
+
+[org/gnome/settings-daemon/plugins/media-keys]
+next='F9'
+area-screenshot-clip='<Primary><Shift><Super>dollar'
+play='F8'
+volume-up='F12'
+volume-down='F11'
+window-screenshot-clip='<Primary><Shift><Super>numbersign'
+window-screenshot='<Shift><Super>numbersign'
+area-screenshot='<Shift><Super>dollar'
+volume-mute='F10'
+previous='F7'
 
 [org/gnome/settings-daemon/plugins/xsettings]
 antialiasing='rgba'
@@ -31,7 +44,7 @@ numlock-state='off'
 [org/gnome/shell]
 app-picker-view=uint32 1
 command-history=['mse@22369', 'R', 'r', 'restart']
-enabled-extensions=['background-logo@fedorahosted.org', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'dash-to-dock@micxgx.gmail.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com']
+enabled-extensions=['background-logo@fedorahosted.org', 'apps-menu@gnome-shell-extensions.gcampax.github.com', 'dash-to-dock@micxgx.gmail.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'alternate-tab@gnome-shell-extensions.gcampax.github.com', 'text_translator@awamper.gmail.com']
 disable-user-extensions=false
 favorite-apps=['webcatalog-1password.desktop', 'org.gnome.Nautilus.desktop', 'slack_slack.desktop', 'org.gnome.Software.desktop', 'emacs.desktop', 'com.gexperts.Tilix.desktop', 'telegram-desktop_telegramdesktop.desktop', 'firefox_firefox.desktop', 'hipchat4.desktop', 'spotify_spotify.desktop', 'google-chrome.desktop']
 
@@ -63,6 +76,16 @@ dash-max-icon-size=30
 opaque-background=true
 icon-size-fixed=true
 
+[org/gnome/shell/extensions/text-translator]
+languages-stats='{"Google.Translate-source-en":{"lang_name":"English","lang_code":"en","count":5},"Google.Translate-target-ru":{"lang_name":"Russian","lang_code":"ru","count":4},"Google.Translate-target-pt":{"lang_name":"Portuguese","lang_code":"pt","count":1}}'
+translators-prefs='{"Google.Translate":{"default_source":"en","default_target":"pt","last_source":"en","last_target":"pt","remember_last_lang":true},"Yandex.Translate":{"default_source":"en","default_target":"pt","last_source":"","last_target":"","remember_last_lang":true}}'
+last-translator='Google.Translate'
+open-translator-dialog-keybinding=['<Alt><Super>backslash']
+translate-from-clipboard-keybinding=['<Alt><Super>bar']
+
+[org/gnome/shell/extensions/freon]
+gpu-utility='bumblebee-nvidia-smi'
+
 [org/gnome/shell/overrides]
 dynamic-workspaces=false
 
@@ -84,6 +107,24 @@ bottom-panel-size=140
 side-panel-size=200
 side-panel-active-page='GeditWindowDocumentsPanel'
 
+[org/gnome/calculator]
+target-currency=''
+show-zeroes=false
+source-currency=''
+show-thousands=false
+button-mode='basic'
+target-units='radian'
+word-size=64
+window-position=(23, 15)
+number-format='automatic'
+angle-units='degrees'
+base=10
+source-units='degree'
+accuracy=9
+
+[org/gnome/Weather/Application]
+locations=[<(uint32 2, <('London', 'EGLL', true, [(0.89855367075064974, -0.0078539816339744835)], [(0.89884456477707964, -0.0020362232784242244)])>)>]
+
 [org/gnome/nautilus/preferences]
 default-folder-viewer='icon-view'
 search-filter-time-type='last_modified'
@@ -91,7 +132,7 @@ use-experimental-views=true
 
 [org/gnome/nautilus/window-state]
 maximized=false
-initial-size=(890, 550)
+initial-size=(1256, 1370)
 
 [org/gnome/nautilus/list-view]
 default-visible-columns=['name', 'size', 'date_modified', 'starred']
@@ -116,12 +157,12 @@ show-battery-percentage=true
 toolkit-accessibility=false
 clock-show-seconds=false
 monospace-font-name='Sans 11'
-enable-animations=false
-gtk-theme='Arc-Darker'
+enable-animations=true
+gtk-theme='Arc-Dark'
 clock-show-date=true
 
 [org/gnome/desktop/notifications]
-application-children=['firefox', 'org-gnome-terminal', 'org-gnome-tweaks', 'org-gnome-software', 'firefox-firefox', 'org-gnome-evolution', 'org-gnome-nautilus', 'hipchat4', 'spotify-spotify']
+application-children=['firefox', 'org-gnome-terminal', 'org-gnome-tweaks', 'org-gnome-software', 'firefox-firefox', 'org-gnome-evolution', 'org-gnome-nautilus', 'hipchat4', 'spotify-spotify', 'abrt-applet']
 
 [org/gnome/desktop/notifications/application/org-gnome-tweaks]
 application-id='org.gnome.tweaks.desktop'
@@ -131,6 +172,9 @@ application-id='org.gnome.Nautilus.desktop'
 
 [org/gnome/desktop/notifications/application/firefox]
 application-id='firefox.desktop'
+
+[org/gnome/desktop/notifications/application/abrt-applet]
+application-id='abrt-applet.desktop'
 
 [org/gnome/desktop/notifications/application/spotify-spotify]
 application-id='spotify_spotify.desktop'
@@ -171,7 +215,7 @@ categories=['X-SuSE-YaST']
 name='suse-yast.directory'
 
 [org/gnome/desktop/screensaver]
-picture-uri='file:///usr/share/backgrounds/gnome/adwaita-timed.xml'
+picture-uri='file:///usr/share/backgrounds/gnome/adwaita-night.jpg'
 color-shading-type='solid'
 primary-color='#3465a4'
 picture-options='zoom'
@@ -193,16 +237,20 @@ report-technical-problems=true
 remove-old-trash-files=true
 
 [org/gnome/desktop/wm/preferences]
+button-layout='appmenu:close'
 num-workspaces=1
 
 [org/gnome/desktop/wm/keybindings]
+switch-group=['<Super>dead_grave']
+switch-group-backward=['<Shift><Super>dead_grave']
 toggle-maximized=['<Alt><Super>Return']
+move-to-monitor-left=['<Alt><Super>l']
 
 [org/gnome/desktop/datetime]
 automatic-timezone=true
 
 [org/gnome/desktop/background]
-picture-uri='file:///usr/share/backgrounds/gnome/adwaita-timed.xml'
+picture-uri='file:///usr/share/backgrounds/gnome/adwaita-night.jpg'
 color-shading-type='solid'
 primary-color='#3465a4'
 picture-options='zoom'
@@ -216,7 +264,7 @@ mru-sources=[('xkb', 'us+alt-intl'), ('xkb', 'gb+mac')]
 sources=[('xkb', 'us+alt-intl'), ('xkb', 'gb+mac')]
 
 [org/gnome/control-center]
-last-panel='background'
+last-panel='display'
 
 [org/gnome/libgnomekbd/preview]
 width=1944
@@ -289,8 +337,29 @@ x=0
 y=0
 
 [org/gnome/mutter/keybindings]
-toggle-tiled-right=['<Alt><Super>l']
+toggle-tiled-right=@as []
 toggle-tiled-left=['<Alt><Super>h']
+
+[org/gnome/gnome-system-monitor]
+current-tab='resources'
+show-whose-processes='user'
+update-interval=3000
+disks-interval=5000
+cpu-stacked-area-chart=false
+show-dependencies=false
+cpu-colors=[(uint32 0, '#FF6E00'), (1, '#CB0C29'), (2, '#49A835'), (3, '#2D7DB3'), (4, '#f25915e815e8'), (5, '#f25915e815e8'), (6, '#f25915e815e8'), (7, '#f25915e815e8')]
+solaris-mode=true
+
+[org/gnome/gnome-system-monitor/proctree]
+columns-order=[0, 1, 2, 3, 4, 6, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26]
+sort-order=0
+col-2-visible=true
+sort-col=8
+col-2-width=0
+
+[org/gnome/gnome-system-monitor/disktreenew]
+col-6-visible=true
+col-6-width=0
 
 [org/gnome/nm-applet/eap/6ce9b9b5-e0b8-4603-b68b-53265f9b0195]
 ignore-phase2-ca-cert=false
@@ -338,7 +407,7 @@ highlight-colors-set=false
 use-theme-colors=true
 use-custom-command=true
 bold-color-set=false
-font='Fira Code weight=453 11'
+font='Fira Code weight=453 14'
 background-color='#263238'
 
 [com/gexperts/Tilix/keybindings]
