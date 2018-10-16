@@ -4,7 +4,7 @@ mode='none'
 [org/gnome/software]
 first-run=false
 show-nonfree-prompt=false
-check-timestamp=int64 1539593051
+check-timestamp=int64 1539677415
 
 [org/gnome/Contacts]
 did-initial-setup=true
@@ -32,6 +32,7 @@ window-screenshot-clip='<Primary><Shift><Super>numbersign'
 window-screenshot='<Shift><Super>numbersign'
 area-screenshot='<Shift><Super>dollar'
 volume-mute='F10'
+eject=''
 previous='F7'
 
 [org/gnome/settings-daemon/plugins/xsettings]
@@ -143,7 +144,10 @@ default-column-order=['name', 'size', 'type', 'owner', 'group', 'permissions', '
 enabled=true
 
 [org/gnome/calendar]
+window-position=(0, 0)
 active-view='month'
+window-maximized=true
+window-size=(2511, 1370)
 
 [org/gnome/evolution-data-server]
 network-monitor-gio-name=''
@@ -177,7 +181,9 @@ application-id='firefox.desktop'
 application-id='abrt-applet.desktop'
 
 [org/gnome/desktop/notifications/application/spotify-spotify]
+enable-sound-alerts=false
 application-id='spotify_spotify.desktop'
+enable=false
 
 [org/gnome/desktop/notifications/application/org-gnome-terminal]
 application-id='org.gnome.Terminal.desktop'
@@ -241,10 +247,12 @@ button-layout='appmenu:close'
 num-workspaces=1
 
 [org/gnome/desktop/wm/keybindings]
+close=['<Super>q']
+move-to-monitor-right=['<Primary><Alt><Super>l']
 switch-group=['<Super>dead_grave']
 switch-group-backward=['<Shift><Super>dead_grave']
 toggle-maximized=['<Alt><Super>Return']
-move-to-monitor-left=['<Alt><Super>l']
+move-to-monitor-left=['<Primary><Alt><Super>h']
 
 [org/gnome/desktop/datetime]
 automatic-timezone=true
@@ -264,7 +272,7 @@ mru-sources=[('xkb', 'us+alt-intl'), ('xkb', 'gb+mac')]
 sources=[('xkb', 'us+alt-intl'), ('xkb', 'gb+mac')]
 
 [org/gnome/control-center]
-last-panel='display'
+last-panel='wifi'
 
 [org/gnome/libgnomekbd/preview]
 width=1944
@@ -294,34 +302,55 @@ schema-version=uint32 3
 show-suppressed=true
 mode='normal'
 
+[org/gnome/evolution]
+version='3.28.5'
+default-address-book='a081bc4020bb79458f609bca6f039a567834dc38'
+
 [org/gnome/evolution/mail]
 paned-size=1601139
 junk-check-incoming=true
+composer-show-from-override=false
 browser-close-on-reply-policy='ask'
 reply-style-name='quoted'
+composer-visually-wrap-long-lines=false
 forward-style-name='attached'
 image-loading-policy='never'
 search-gravatar-for-photo=false
 to-do-bar-width=1150000
+prompt-on-composer-mode-switch=true
+
+[org/gnome/evolution/mail/composer-window]
+width=600
+maximized=false
+height=500
+
+[org/gnome/evolution/addressbook]
+primary-addressbook='system-address-book'
+completion-show-address=false
+completion-minimum-query-length=3
 
 [org/gnome/evolution/calendar]
-work-day-thursday=true
+work-day-friday=true
+confirm-purge=true
+work-day-wednesday=true
 work-day-sunday=false
+work-day-thursday=true
+recur-events-italic=false
+last-notification-time=1539676800
 prefer-new-item=''
 work-day-saturday=false
+time-divisions=30
 work-day-tuesday=true
+date-navigator-pane-position=175
 week-start-day-name='monday'
-work-day-wednesday=true
+primary-memos='system-memo-list'
 work-day-monday=true
-work-day-friday=true
-
-[org/gnome/evolution]
-default-address-book='a081bc4020bb79458f609bca6f039a567834dc38'
-version='3.28.5'
+tag-vpane-position=0.00080515297906602612
+primary-tasks='dfec174c1637ebe6ce9801aed9b2d388d96b4950'
 
 [org/gnome/evolution/shell]
 menubar-visible=true
-folder-bar-width=216
+folder-bar-width=259
 sidebar-visible=true
 default-component-id='mail'
 buttons-visible=true
@@ -337,13 +366,15 @@ x=0
 y=0
 
 [org/gnome/mutter/keybindings]
-toggle-tiled-right=@as []
+toggle-tiled-right=['<Alt><Super>l']
 toggle-tiled-left=['<Alt><Super>h']
 
 [org/gnome/gnome-system-monitor]
 current-tab='resources'
 show-whose-processes='user'
+window-state=(700, 1022, 23, 15)
 update-interval=3000
+maximized=false
 disks-interval=5000
 cpu-stacked-area-chart=false
 show-dependencies=false
@@ -390,8 +421,8 @@ sort-order='ascending'
 location-mode='path-bar'
 
 [org/gtk/settings/color-chooser]
-selected-color=(true, 0.53333333333333333, 0.54117647058823526, 0.52156862745098043, 1.0)
-custom-colors=[(0.32941176470588235, 0.32941176470588235, 0.32941176470588235, 1.0), (0.32941176470588235, 0.32941176470588235, 1.0, 1.0), (0.0, 0.0, 0.66666666666666663, 1.0), (0.0, 0.66666666666666663, 0.0, 1.0), (0.66666666666666663, 0.0, 0.0, 1.0)]
+selected-color=(true, 0.82745098039215681, 0.85490196078431369, 0.8901960784313725, 1.0)
+custom-colors=[(0.82745098039215681, 0.85490196078431369, 0.8901960784313725, 1.0), (0.32941176470588235, 0.32941176470588235, 0.32941176470588235, 1.0), (0.32941176470588235, 0.32941176470588235, 1.0, 1.0), (0.0, 0.0, 0.66666666666666663, 1.0), (0.0, 0.66666666666666663, 0.0, 1.0), (0.66666666666666663, 0.0, 0.0, 1.0)]
 
 [com/gexperts/Tilix/profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d]
 foreground-color='#A1B0B8'
