@@ -4,6 +4,7 @@ sudo dnf upgrade
 
 sudo dnf install emacs
 sudo dnf install zsh
+sudo dnf install the_silver_searcher
 
 sudo dnf install arc-theme
 sudo dnf install gnome-tweak-tool
@@ -23,6 +24,7 @@ sudo snap install slack --classic
 
 sudo dnf install golang
 
+git config --global credential.helper store
 git config --global user.email "jr8116@gmail.com"
 
 # base folders
