@@ -2,6 +2,7 @@
 sudo dnf update
 sudo dnf upgrade
 
+sudo dnf install tilix
 sudo dnf install emacs
 sudo dnf install zsh
 sudo dnf install the_silver_searcher
@@ -13,7 +14,7 @@ sudo dnf install snapd
 
 sudo ln -s /var/lib/snapd/snap /snap
 
-sudo dnf install -y gcc zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel tk-devel libffi-devel
+sudo dnf install -y gcc gcc-c++ zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel tk-devel libffi-devel libjpeg libjpeg-devel unixODBC-devel
 
 sudo dnf copr enable evana/fira-code-fonts
 sudo dnf install fira-code-fonts
@@ -58,3 +59,11 @@ mv .emacs.d .emacs.d.bak
 mv .emacs .emacs.bak
 git clone https://github.com/jrfferreira/emacs-config ~/Code/emacs-config
 ln -s ~/Code/emacs-config .emacs.d
+
+# tilix
+mkdir -p ~/.config/tilix/schemes
+wget -qO "~/.config/tilix/schemes/one-dark.json" https://git.io/v7Qaw
+
+
+# fs watch limit
+echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
