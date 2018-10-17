@@ -25,9 +25,9 @@ export DISABLE_VENV_CD=1
 ENABLE_CORRECTION="true"
 
 plugins=(
-    autoenv
+#    autoenv
     bower
-    brew
+#    brew
     cap
     capistrano
     common-aliases
@@ -38,7 +38,6 @@ plugins=(
     jsontools
     node
     npm
-    osx
     pip
     python
     vagrant
@@ -54,9 +53,10 @@ source $ZSH/oh-my-zsh.sh
 export LANG=en_US.UTF-8
 
 eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
 
-alias cat=bat
-alias ping=prettyping
+#alias cat=bat
+#alias ping=prettyping
