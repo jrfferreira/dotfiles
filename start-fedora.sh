@@ -2,6 +2,9 @@
 sudo dnf update
 sudo dnf upgrade
 
+# RPM Fusion
+sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
 sudo dnf install tilix
 sudo dnf install emacs
 sudo dnf install zsh
@@ -14,7 +17,7 @@ sudo dnf install snapd
 
 sudo ln -s /var/lib/snapd/snap /snap
 
-sudo dnf install -y gcc gcc-c++ zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel tk-devel libffi-devel libjpeg libjpeg-devel unixODBC-devel
+sudo dnf install -y gcc gcc-c++ zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel tk-devel libffi-devel libjpeg libjpeg-devel libyaml-devel unixODBC-devel
 
 sudo dnf copr enable evana/fira-code-fonts
 sudo dnf install fira-code-fonts
