@@ -5,6 +5,9 @@ sudo dnf upgrade
 # RPM Fusion
 sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
+# Linuxbrew
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+
 sudo dnf install tilix
 sudo dnf install emacs
 sudo dnf install zsh
@@ -70,3 +73,8 @@ wget -qO "~/.config/tilix/schemes/one-dark.json" https://git.io/v7Qaw
 
 # fs watch limit
 echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+
+# nord vpn
+wget https://bintray.com/chadsr/nordnm-rpm/rpm -O bintray-chadsr-nordnm-rpm.repo
+sudo mv bintray-chadsr-nordnm-rpm.repo /etc/yum.repos.d/
+sudo yum install nordnm
