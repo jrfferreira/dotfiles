@@ -61,10 +61,10 @@ sudo npm install -g flow flow-bin typescript tern eslint prettier babel-eslint e
 
 
 # emacs
-mv .emacs.d .emacs.d.bak
-mv .emacs .emacs.bak
+mv ~/.emacs.d ~/.emacs.d.bak
+mv ~/.emacs ~/.emacs.bak
 git clone https://github.com/jrfferreira/emacs-config ~/Code/emacs-config
-ln -s ~/Code/emacs-config .emacs.d
+ln -s ~/Code/emacs-config ~/.emacs.d
 
 # tilix
 mkdir -p ~/.config/tilix/schemes
