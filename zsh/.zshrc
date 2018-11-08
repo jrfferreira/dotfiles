@@ -25,7 +25,7 @@ export DISABLE_VENV_CD=1
 ENABLE_CORRECTION="true"
 
 plugins=(
-#    autoenv
+    autoenv
     bower
 #    brew
     cap

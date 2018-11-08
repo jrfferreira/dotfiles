@@ -26,8 +26,8 @@ git clone https://github.com/jrfferreira/emacs-config ~/Code/emacs-config
 ln -s ~/Code/emacs-config ~/.emacs.d
 
 # basic apps
-sudo apt install firefox tilix zsh silversearcher-ag snapd
-sudo snap install telegram-desktop slack spotify
+sudo apt install firefox tilix zsh silversearcher-ag snapd nordvpn
+sudo snap install telegram-desktop slack spotify gravit-designer
 
 # pyenv
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
@@ -52,9 +52,10 @@ wget -qO "~/.config/tilix/schemes/one-dark.json" https://git.io/v7Qaw
 
 zsh
 
+# Adding virtualenv as global
+sudo apt install python-dev python3-dev unixodbc unixodbc-dev virtualenv virtualenvwrapper
 pyenv install 3.7.1
 pyenv global system 3.7.1
-pip install virtualenv virtualenvwrapper ipython
 
 # npm modules
 nvm install stable && nvm use stable
