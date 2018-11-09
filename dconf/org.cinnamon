@@ -1,0 +1,145 @@
+[/]
+extension-cache-updated=1541782880
+desktop-effects-unmaximize-transition='easeNone'
+desktop-effects-maximize-transition='easeInExpo'
+applet-cache-updated=1541783737
+active-display-scale=2
+desktop-effects-map-effect='traditional'
+alttab-switcher-show-all-workspaces=true
+desktop-effects-close-effect='traditional'
+workspace-osd-duration=400
+desktop-effects-unmaximize-time=100
+enabled-desklets=@as []
+desktop-effects-map-time=100
+panels-scale-text-icons=['1:true', '2:false']
+desktop-effects-minimize-effect='traditional'
+desklet-snap-interval=25
+prevent-focus-stealing=false
+panels-height=['1:25', '2:32']
+next-applet-id=27
+panel-launchers=['DEPRECATED']
+desktop-effects-map-transition='easeOutQuad'
+desktop-effects-unmaximize-effect='none'
+panels-enabled=['1:0:top']
+desktop-effects-tile-transition='easeInQuad'
+workspace-osd-visible=false
+desktop-effects-maximize-time=100
+desktop-effects-maximize-effect='none'
+panels-resizable=['1:false', '2:true']
+enabled-applets=['panel1:right:6:systray@cinnamon.org:0', 'panel1:left:0:menu@cinnamon.org:1', 'panel1:right:7:keyboard@cinnamon.org:5', 'panel1:right:15:notifications@cinnamon.org:6', 'panel1:right:9:removable-drives@cinnamon.org:7', 'panel1:right:10:user@cinnamon.org:8', 'panel1:right:11:network@cinnamon.org:9', 'panel1:right:12:power@cinnamon.org:11', 'panel1:right:13:calendar@cinnamon.org:12', 'panel1:right:14:sound@cinnamon.org:13', 'panel1:left:1:windows-quick-list@cinnamon.org:15', 'panel1:left:2:spacer@cinnamon.org:17', 'panel1:right:4:multicore-sys-monitor@ccadeptic23:19', 'panel1:left:3:IcingTaskManager@json:26']
+desktop-effects-minimize-time=160
+alttab-switcher-delay=100
+desktop-effects-tile-effect='none'
+desktop-effects-close-transition='easeOutQuad'
+desktop-effects-minimize-transition='easeInQuad'
+panel-edit-mode=false
+panels-show-delay=['1:0', '2:0']
+desklet-cache-updated=1541783260
+desktop-effects-close-time=120
+no-adjacent-panel-barriers=false
+panels-hide-delay=['1:0', '2:0']
+workspace-expo-view-as-grid=false
+workspace-osd-x=50
+workspace-osd-y=50
+desktop-effects-tile-time=100
+panels-autohide=['1:false', '2:false']
+
+[settings-daemon/plugins/power]
+sleep-display-battery=1800
+lid-close-battery-action='suspend'
+sleep-display-ac=1800
+lid-close-ac-action='suspend'
+sleep-inactive-ac-timeout=0
+sleep-inactive-battery-timeout=0
+
+[settings-daemon/plugins/xsettings]
+buttons-have-icons=false
+
+[settings-daemon/peripherals/touchpad]
+motion-threshold=1
+natural-scroll=false
+
+[settings-daemon/peripherals/touchscreen]
+orientation-lock=false
+
+[settings-daemon/peripherals/keyboard]
+repeat-interval=uint32 30
+delay=uint32 500
+numlock-state='off'
+
+[settings-daemon/peripherals/mouse]
+drag-threshold=8
+motion-threshold=1
+double-click=400
+
+[muffin]
+resize-threshold=24
+tile-hud-threshold=25
+
+[desktop/interface]
+clock-show-date=false
+cursor-size=24
+cursor-blink-time=1200
+first-day-of-week=1
+cursor-theme='DMZ-White'
+gtk-theme='Adapta-Nokto'
+icon-theme='Mint-Y-Aqua'
+
+[desktop/keybindings/media-keys]
+next=['XF86AudioNext', 'F9']
+play=['XF86AudioPlay', 'F8']
+volume-up=['XF86AudioRaiseVolume', 'F12']
+terminal=['<Super>t']
+volume-down=['AudioLowerVolume', 'F11']
+search=['<Super>f']
+volume-mute=['XF86AudioMute', 'F10']
+previous=['XF86AudioPrev', 'F7']
+
+[desktop/keybindings/wm]
+maximize=@as []
+push-snap-left=['<Shift><Alt><Super>h']
+switch-windows-backward=['<Shift><Super>Tab']
+switch-windows=['<Super>Tab']
+close=['<Super>q']
+toggle-maximized=['<Alt><Super>Return']
+move-to-monitor-left=['<Primary><Alt><Super>l']
+move-to-side-e=@as []
+push-snap-right=['<Shift><Alt><Super>l']
+move-to-monitor-right=['<Primary><Alt><Super>h']
+push-tile-left=['<Alt><Super>h']
+switch-group=['<Super>dead_grave']
+push-tile-right=['<Alt><Super>l']
+switch-group-backward=['<Shift><Super>dead_perispomeni']
+minimize=['<Super>h']
+
+[desktop/media-handling]
+autorun-never=false
+
+[desktop/screensaver]
+screensaver-name=''
+
+[desktop/applications/terminal]
+exec='tilix'
+
+[desktop/wm/preferences]
+min-window-opacity=30
+button-layout=':minimize,close'
+theme='Adapta-Nokto'
+
+[desktop/sound]
+event-sounds=false
+
+[desktop/background]
+picture-uri='file:///usr/share/backgrounds/linuxmint-tara/jowens_kauai.jpg'
+picture-options='zoom'
+
+[desktop/background/slideshow]
+image-source='xml:///usr/share/cinnamon-background-properties/linuxmint-tara.xml'
+delay=15
+
+[theme]
+theme-cache-updated=1541793378
+name='Adapta-Nokto'
+
+[cinnamon-session]
+quit-time-delay=60

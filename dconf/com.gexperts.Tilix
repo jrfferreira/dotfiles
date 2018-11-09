@@ -1,0 +1,36 @@
+[profiles/2b7c4080-0ddd-46c5-8f23-563fd3ba789d]
+foreground-color='#829395'
+rewrap-on-resize=true
+visible-name='Default'
+palette=['#000000', '#CC0000', '#4D9A05', '#C3A000', '#3464A3', '#754F7B', '#05979A', '#D3D6CF', '#545652', '#EF2828', '#89E234', '#FBE84F', '#729ECF', '#AC7EA8', '#34E2E2', '#EDEDEB']
+bold-is-bright=false
+custom-command='/usr/bin/zsh'
+badge-color-set=false
+cursor-shape='block'
+cursor-colors-set=false
+highlight-colors-set=false
+use-system-font=false
+use-custom-command=true
+bold-color-set=false
+font='Fira Code weight=450 12'
+use-theme-colors=true
+background-color='#002A35'
+
+[keybindings]
+session-close='<Super>w'
+session-switch-to-next-terminal='<Super>bracketright'
+session-switch-to-terminal-down='<Alt>Right'
+session-add-right='<Super>d'
+session-add-down='<Shift><Super>d'
+session-switch-to-terminal-right='disabled'
+terminal-maximize='<Shift><Super>Return'
+session-switch-to-previous-terminal='<Super>bracketleft'
+
+[/]
+sidebar-on-right=false
+terminal-title-style='none'
+theme-variant='dark'
+session-name=''
+app-title='${iconTitle}'
+warn-vte-config-issue=false
+window-style='normal'
