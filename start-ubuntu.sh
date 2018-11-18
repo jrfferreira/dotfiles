@@ -39,7 +39,11 @@ sudo snap install telegram-desktop spotify gravit-designer
 sudo snap install --classic slack
 
 # forcing cinnamon to restart
-if ! [hash cinnamon 2>/dev/null]; then pkill -HUP -f "cinnamon --replace"; fi
+if ! [hash cinnamon 2>/dev/null]; then
+    pkill -HUP -f "cinnamon --replace"
+    dconf load /org/cinnamon/ < $DOTFILES_FOLDER/dconf/org.cinnamon
+    dconf load /com/gexperts/Tilix/ < $DOTFILES_FOLDER/dconf/com.gexperts.Tilix
+fi
 
 # docker if necessary
 if ! [hash docker 2>/dev/null]; then wget -qO- https://get.docker.com/ | sh; fi
@@ -75,11 +79,9 @@ fi
 
 # Adding virtualenv as global
 zsh -c 'sudo apt install python-dev python3-dev unixodbc unixodbc-dev virtualenv virtualenvwrapper \
-pyenv install 3.7.1 \
-pyenv global system 3.7.1'
+&& pyenv install 3.7.1 \
+&& pyenv global system 3.7.1'
 
 # npm modules
 zsh -c 'nvm install stable && nvm use stable \
-npm install -g flow flow-bin typescript tern eslint prettier babel-eslint eslint-plugin-react js-beautify eslint-plugin-mocha eslint-plugin-flowtype eslint-plugin-jasmine eslint-plugin-jsx-control-statements eslint-plugin-promise eslint-plugin-jest eslint-plugin-import eslint-plugin-prettier eslint-config-prettier'
-
-
+&& npm install -g flow flow-bin typescript tern eslint prettier babel-eslint eslint-plugin-react js-beautify eslint-plugin-mocha eslint-plugin-flowtype eslint-plugin-jasmine eslint-plugin-jsx-control-statements eslint-plugin-promise eslint-plugin-jest eslint-plugin-import eslint-plugin-prettier eslint-config-prettier'

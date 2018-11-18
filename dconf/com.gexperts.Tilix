@@ -16,17 +16,8 @@ font='Fira Code weight=450 12'
 use-theme-colors=true
 background-color='#002A35'
 
-[keybindings]
-session-close='<Super>w'
-session-switch-to-next-terminal='<Super>bracketright'
-session-switch-to-terminal-down='<Alt>Right'
-session-add-right='<Super>d'
-session-add-down='<Shift><Super>d'
-session-switch-to-terminal-right='disabled'
-terminal-maximize='<Shift><Super>Return'
-session-switch-to-previous-terminal='<Super>bracketleft'
-
 [/]
+quake-specific-monitor=0
 sidebar-on-right=false
 terminal-title-style='none'
 theme-variant='dark'
@@ -34,3 +25,15 @@ session-name=''
 app-title='${iconTitle}'
 warn-vte-config-issue=false
 window-style='normal'
+
+[keybindings]
+session-close='disabled'
+session-switch-to-next-terminal='<Super>bracketright'
+terminal-find='<Primary><Shift>f'
+session-switch-to-terminal-down='<Alt>Right'
+session-add-right='<Super>d'
+session-add-down='<Shift><Super>d'
+session-switch-to-terminal-right='disabled'
+terminal-maximize='<Shift><Super>Return'
+terminal-close='<Super>w'
+session-switch-to-previous-terminal='<Super>bracketleft'

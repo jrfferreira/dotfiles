@@ -26,7 +26,7 @@ workspace-osd-visible=false
 desktop-effects-maximize-time=100
 desktop-effects-maximize-effect='none'
 panels-resizable=['1:false', '2:true']
-enabled-applets=['panel1:right:6:systray@cinnamon.org:0', 'panel1:left:0:menu@cinnamon.org:1', 'panel1:right:7:keyboard@cinnamon.org:5', 'panel1:right:15:notifications@cinnamon.org:6', 'panel1:right:9:removable-drives@cinnamon.org:7', 'panel1:right:10:user@cinnamon.org:8', 'panel1:right:11:network@cinnamon.org:9', 'panel1:right:12:power@cinnamon.org:11', 'panel1:right:13:calendar@cinnamon.org:12', 'panel1:right:14:sound@cinnamon.org:13', 'panel1:left:1:windows-quick-list@cinnamon.org:15', 'panel1:left:2:spacer@cinnamon.org:17', 'panel1:right:4:multicore-sys-monitor@ccadeptic23:19', 'panel1:left:3:IcingTaskManager@json:26']
+enabled-applets=['panel1:right:6:systray@cinnamon.org:0', 'panel1:left:0:menu@cinnamon.org:1', 'panel1:right:7:keyboard@cinnamon.org:5', 'panel1:right:15:notifications@cinnamon.org:6', 'panel1:right:9:removable-drives@cinnamon.org:7', 'panel1:right:10:user@cinnamon.org:8', 'panel1:right:11:network@cinnamon.org:9', 'panel1:right:12:power@cinnamon.org:11', 'panel1:right:13:calendar@cinnamon.org:12', 'panel1:right:14:sound@cinnamon.org:13', 'panel1:left:1:windows-quick-list@cinnamon.org:15', 'panel1:right:4:multicore-sys-monitor@ccadeptic23:19', 'panel1:left:3:IcingTaskManager@json:26']
 desktop-effects-minimize-time=160
 alttab-switcher-delay=100
 desktop-effects-tile-effect='none'
@@ -57,7 +57,7 @@ buttons-have-icons=false
 
 [settings-daemon/peripherals/touchpad]
 motion-threshold=1
-natural-scroll=false
+natural-scroll=true
 
 [settings-daemon/peripherals/touchscreen]
 orientation-lock=false
@@ -72,18 +72,33 @@ drag-threshold=8
 motion-threshold=1
 double-click=400
 
+[sounds]
+logout-enabled=false
+map-enabled=false
+maximize-enabled=false
+login-enabled=false
+switch-enabled=false
+tile-enabled=false
+minimize-enabled=false
+unplug-enabled=false
+close-enabled=false
+plug-enabled=false
+unmaximize-enabled=false
+
 [muffin]
 resize-threshold=24
 tile-hud-threshold=25
 
 [desktop/interface]
-clock-show-date=false
 cursor-size=24
-cursor-blink-time=1200
 first-day-of-week=1
 cursor-theme='DMZ-White'
-gtk-theme='Adapta-Nokto'
+gtk-im-module='gtk-im-context-simple:xim'
+toolkit-accessibility=false
+cursor-blink-time=1200
 icon-theme='Mint-Y-Aqua'
+gtk-theme='Adapta-Nokto'
+clock-show-date=false
 
 [desktop/keybindings/media-keys]
 next=['XF86AudioNext', 'F9']
@@ -103,6 +118,7 @@ switch-windows=['<Super>Tab']
 close=['<Super>q']
 toggle-maximized=['<Alt><Super>Return']
 move-to-monitor-left=['<Primary><Alt><Super>l']
+show-desktop=@as []
 move-to-side-e=@as []
 push-snap-right=['<Shift><Alt><Super>l']
 move-to-monitor-right=['<Primary><Alt><Super>h']
@@ -125,6 +141,17 @@ exec='tilix'
 min-window-opacity=30
 button-layout=':minimize,close'
 theme='Adapta-Nokto'
+
+[desktop/a11y/applications]
+screen-keyboard-enabled=false
+screen-reader-enabled=false
+
+[desktop/a11y/mouse]
+secondary-click-enabled=false
+secondary-click-time=1.2
+dwell-time=1.2
+dwell-threshold=10
+dwell-click-enabled=false
 
 [desktop/sound]
 event-sounds=false

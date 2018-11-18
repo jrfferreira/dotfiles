@@ -5,22 +5,25 @@ sudo dnf upgrade
 # RPM Fusion
 sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
-# Linuxbrew
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
-
 sudo dnf install tilix
 sudo dnf install emacs
 sudo dnf install zsh
 sudo dnf install the_silver_searcher
-
-sudo dnf install arc-theme
-sudo dnf install gnome-tweak-tool
-sudo dnf install chrome-gnome-shell
 sudo dnf install snapd
 
 sudo ln -s /var/lib/snapd/snap /snap
 
 sudo dnf install -y gcc gcc-c++ zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel tk-devel libffi-devel libjpeg libjpeg-devel libyaml-devel unixODBC-devel
+
+# docker if necessary
+if ! [hash docker 2>/dev/null]; then wget -qO- https://get.docker.com/ | sh; fi
+
+# forcing cinnamon to restart
+if ! [hash cinnamon 2>/dev/null]; then
+    pkill -HUP -f "cinnamon --replace"
+    dconf load /org/cinnamon/ < $DOTFILES_FOLDER/dconf/org.cinnamon
+    dconf load /com/gexperts/Tilix/ < $DOTFILES_FOLDER/dconf/com.gexperts.Tilix
+fi
 
 sudo dnf copr enable evana/fira-code-fonts
 sudo dnf install fira-code-fonts
@@ -36,9 +39,6 @@ git config --global user.email "jr8116@gmail.com"
 
 # base folders
 mkdir ~/Code
-
-# dconf
-dconf load / < gnome.dconf
 
 # pyenv
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
@@ -57,10 +57,15 @@ ln -s ~/Code/dotfiles/zsh/.zshenv ~/.zshenv
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
 git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
 
-# npm modules
-nvm install stable && nvm use stable
-npm install -g yarn gulp flow flow-bin typescript tern eslint prettier babel-eslint eslint-plugin-react js-beautify eslint-plugin-mocha eslint-plugin-flowtype eslint-plugin-jasmine eslint-plugin-jsx-control-statements eslint-plugin-promise eslint-plugin-jest eslint-plugin-import eslint-plugin-prettier eslint-config-prettier
 
+# Adding virtualenv as global
+zsh -c 'sudo dnf install python-devel python3-devel virtualenv \
+&& pyenv install 3.7.1 \
+&& pyenv global 3.7.1'
+
+# npm modules
+zsh -c 'nvm install stable && nvm use stable \
+&& npm install -g flow flow-bin typescript tern eslint prettier babel-eslint eslint-plugin-react js-beautify eslint-plugin-mocha eslint-plugin-flowtype eslint-plugin-jasmine eslint-plugin-jsx-control-statements eslint-plugin-promise eslint-plugin-jest eslint-plugin-import eslint-plugin-prettier eslint-config-prettier'
 
 # emacs
 mv ~/.emacs.d ~/.emacs.d.bak
