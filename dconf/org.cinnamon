@@ -1,22 +1,22 @@
 [/]
-extension-cache-updated=1541782880
+extension-cache-updated=1542621130
 desktop-effects-unmaximize-transition='easeNone'
 desktop-effects-maximize-transition='easeInExpo'
 applet-cache-updated=1541783737
-active-display-scale=2
+active-display-scale=1
 desktop-effects-map-effect='traditional'
 alttab-switcher-show-all-workspaces=true
 desktop-effects-close-effect='traditional'
 workspace-osd-duration=400
 desktop-effects-unmaximize-time=100
-enabled-desklets=@as []
+enabled-desklets=['bbcwx@oak-wood.co.uk:4:25:825']
 desktop-effects-map-time=100
 panels-scale-text-icons=['1:true', '2:false']
 desktop-effects-minimize-effect='traditional'
 desklet-snap-interval=25
 prevent-focus-stealing=false
-panels-height=['1:25', '2:32']
-next-applet-id=27
+panels-height=['1:28', '2:32']
+next-applet-id=28
 panel-launchers=['DEPRECATED']
 desktop-effects-map-transition='easeOutQuad'
 desktop-effects-unmaximize-effect='none'
@@ -25,24 +25,26 @@ desktop-effects-tile-transition='easeInQuad'
 workspace-osd-visible=false
 desktop-effects-maximize-time=100
 desktop-effects-maximize-effect='none'
-panels-resizable=['1:false', '2:true']
-enabled-applets=['panel1:right:6:systray@cinnamon.org:0', 'panel1:left:0:menu@cinnamon.org:1', 'panel1:right:7:keyboard@cinnamon.org:5', 'panel1:right:15:notifications@cinnamon.org:6', 'panel1:right:9:removable-drives@cinnamon.org:7', 'panel1:right:10:user@cinnamon.org:8', 'panel1:right:11:network@cinnamon.org:9', 'panel1:right:12:power@cinnamon.org:11', 'panel1:right:13:calendar@cinnamon.org:12', 'panel1:right:14:sound@cinnamon.org:13', 'panel1:left:1:windows-quick-list@cinnamon.org:15', 'panel1:right:4:multicore-sys-monitor@ccadeptic23:19', 'panel1:left:3:IcingTaskManager@json:26']
+panels-resizable=['1:true', '2:true']
+enabled-applets=['panel1:right:7:systray@cinnamon.org:0', 'panel1:left:0:menu@cinnamon.org:1', 'panel1:right:8:keyboard@cinnamon.org:5', 'panel1:right:16:notifications@cinnamon.org:6', 'panel1:right:10:removable-drives@cinnamon.org:7', 'panel1:right:11:user@cinnamon.org:8', 'panel1:right:12:network@cinnamon.org:9', 'panel1:right:13:power@cinnamon.org:11', 'panel1:right:14:calendar@cinnamon.org:12', 'panel1:right:15:sound@cinnamon.org:13', 'panel1:left:1:windows-quick-list@cinnamon.org:15', 'panel1:right:5:multicore-sys-monitor@ccadeptic23:19', 'panel1:left:3:IcingTaskManager@json:26']
 desktop-effects-minimize-time=160
 alttab-switcher-delay=100
 desktop-effects-tile-effect='none'
 desktop-effects-close-transition='easeOutQuad'
+enabled-extensions=@as []
 desktop-effects-minimize-transition='easeInQuad'
 panel-edit-mode=false
 panels-show-delay=['1:0', '2:0']
-desklet-cache-updated=1541783260
+desklet-cache-updated=1542620566
 desktop-effects-close-time=120
-no-adjacent-panel-barriers=false
+next-desklet-id=9
 panels-hide-delay=['1:0', '2:0']
-workspace-expo-view-as-grid=false
+no-adjacent-panel-barriers=false
 workspace-osd-x=50
 workspace-osd-y=50
 desktop-effects-tile-time=100
 panels-autohide=['1:false', '2:false']
+workspace-expo-view-as-grid=false
 
 [settings-daemon/plugins/power]
 sleep-display-battery=1800
@@ -86,7 +88,7 @@ plug-enabled=false
 unmaximize-enabled=false
 
 [muffin]
-resize-threshold=24
+resize-threshold=20
 tile-hud-threshold=25
 
 [desktop/interface]
@@ -96,8 +98,8 @@ cursor-theme='DMZ-White'
 gtk-im-module='gtk-im-context-simple:xim'
 toolkit-accessibility=false
 cursor-blink-time=1200
-icon-theme='Mint-Y-Aqua'
-gtk-theme='Adapta-Nokto'
+icon-theme='Paper-Mono-Dark'
+gtk-theme='Arc-Dark'
 clock-show-date=false
 
 [desktop/keybindings/media-keys]
@@ -117,11 +119,11 @@ switch-windows-backward=['<Shift><Super>Tab']
 switch-windows=['<Super>Tab']
 close=['<Super>q']
 toggle-maximized=['<Alt><Super>Return']
-move-to-monitor-left=['<Primary><Alt><Super>l']
+move-to-monitor-left=['<Alt><Super>j']
 show-desktop=@as []
 move-to-side-e=@as []
 push-snap-right=['<Shift><Alt><Super>l']
-move-to-monitor-right=['<Primary><Alt><Super>h']
+move-to-monitor-right=['<Alt><Super>k']
 push-tile-left=['<Alt><Super>h']
 switch-group=['<Super>dead_grave']
 push-tile-right=['<Alt><Super>l']
@@ -129,10 +131,14 @@ switch-group-backward=['<Shift><Super>dead_perispomeni']
 minimize=['<Super>h']
 
 [desktop/media-handling]
+autorun-x-content-start-app=['x-content/unix-software', 'x-content/bootable-media']
 autorun-never=false
+autorun-x-content-ignore=@as []
+autorun-x-content-open-folder=@as []
 
 [desktop/screensaver]
 screensaver-name=''
+layout-group=1
 
 [desktop/applications/terminal]
 exec='tilix'
@@ -140,7 +146,7 @@ exec='tilix'
 [desktop/wm/preferences]
 min-window-opacity=30
 button-layout=':minimize,close'
-theme='Adapta-Nokto'
+theme='Arc-Dark'
 
 [desktop/a11y/applications]
 screen-keyboard-enabled=false
@@ -157,16 +163,16 @@ dwell-click-enabled=false
 event-sounds=false
 
 [desktop/background]
-picture-uri='file:///usr/share/backgrounds/linuxmint-tara/jowens_kauai.jpg'
+picture-uri='file:///usr/share/backgrounds/adapta/tri-fadeno.jpg'
 picture-options='zoom'
 
 [desktop/background/slideshow]
-image-source='xml:///usr/share/cinnamon-background-properties/linuxmint-tara.xml'
+image-source='xml:///usr/share/cinnamon-background-properties/adwaita.xml'
 delay=15
 
 [theme]
-theme-cache-updated=1541793378
-name='Adapta-Nokto'
+theme-cache-updated=1542626436
+name='Arc-Dark-solid'
 
 [cinnamon-session]
 quit-time-delay=60

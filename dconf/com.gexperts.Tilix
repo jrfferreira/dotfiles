@@ -19,12 +19,15 @@ background-color='#002A35'
 [/]
 quake-specific-monitor=0
 sidebar-on-right=false
+auto-hide-mouse=true
 terminal-title-style='none'
 theme-variant='dark'
-session-name=''
-app-title='${iconTitle}'
+session-name='${title}'
+enable-wide-handle=false
+app-title='${title}'
 warn-vte-config-issue=false
-window-style='normal'
+terminal-title-show-when-single=true
+window-style='disable-csd-hide-toolbar'
 
 [keybindings]
 session-close='disabled'
