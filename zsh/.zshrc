@@ -25,14 +25,14 @@ export DISABLE_VENV_CD=1
 ENABLE_CORRECTION="true"
 
 plugins=(
-    autoenv
+#    autoenv
     bower
 #    brew
-    cap
-    capistrano
+#    cap
+#    capistrano
     common-aliases
-    django
-    fabric
+#    django
+#    fabric
     grunt
     gulp
     jsontools
@@ -42,7 +42,7 @@ plugins=(
     python
     vagrant
     vim-interaction
-    virtualenvwrapper
+#    virtualenvwrapper
     zsh-nvm
 )
 

@@ -2,7 +2,7 @@
 extension-cache-updated=1542621130
 desktop-effects-unmaximize-transition='easeNone'
 desktop-effects-maximize-transition='easeInExpo'
-applet-cache-updated=1541783737
+applet-cache-updated=1542647893
 active-display-scale=1
 desktop-effects-map-effect='traditional'
 alttab-switcher-show-all-workspaces=true
@@ -16,22 +16,22 @@ desktop-effects-minimize-effect='traditional'
 desklet-snap-interval=25
 prevent-focus-stealing=false
 panels-height=['1:28', '2:32']
-next-applet-id=28
+next-applet-id=42
 panel-launchers=['DEPRECATED']
 desktop-effects-map-transition='easeOutQuad'
 desktop-effects-unmaximize-effect='none'
-panels-enabled=['1:0:top']
+panels-enabled=['1:0:top', '2:1:top']
 desktop-effects-tile-transition='easeInQuad'
 workspace-osd-visible=false
 desktop-effects-maximize-time=100
 desktop-effects-maximize-effect='none'
 panels-resizable=['1:true', '2:true']
-enabled-applets=['panel1:right:7:systray@cinnamon.org:0', 'panel1:left:0:menu@cinnamon.org:1', 'panel1:right:8:keyboard@cinnamon.org:5', 'panel1:right:16:notifications@cinnamon.org:6', 'panel1:right:10:removable-drives@cinnamon.org:7', 'panel1:right:11:user@cinnamon.org:8', 'panel1:right:12:network@cinnamon.org:9', 'panel1:right:13:power@cinnamon.org:11', 'panel1:right:14:calendar@cinnamon.org:12', 'panel1:right:15:sound@cinnamon.org:13', 'panel1:left:1:windows-quick-list@cinnamon.org:15', 'panel1:right:5:multicore-sys-monitor@ccadeptic23:19', 'panel1:left:3:IcingTaskManager@json:26']
+enabled-applets=['panel1:right:10:systray@cinnamon.org:0', 'panel1:right:11:keyboard@cinnamon.org:5', 'panel1:right:19:notifications@cinnamon.org:6', 'panel1:right:13:removable-drives@cinnamon.org:7', 'panel1:right:14:user@cinnamon.org:8', 'panel1:right:15:network@cinnamon.org:9', 'panel1:right:16:power@cinnamon.org:11', 'panel1:center:0:calendar@cinnamon.org:12', 'panel1:right:18:sound@cinnamon.org:13', 'panel1:left:2:windows-quick-list@cinnamon.org:15', 'panel1:left:3:IcingTaskManager@json:26', 'panel1:left:0:Cinnamenu@json:28', 'panel1:left:1:separator@cinnamon.org:29', 'panel2:right:11:keyboard@cinnamon.org:34', 'panel2:right:13:removable-drives@cinnamon.org:35', 'panel2:right:14:user@cinnamon.org:36', 'panel2:center:0:calendar@cinnamon.org:37', 'panel2:left:2:windows-quick-list@cinnamon.org:38', 'panel2:left:3:IcingTaskManager@json:39', 'panel2:left:0:Cinnamenu@json:40', 'panel2:left:1:separator@cinnamon.org:41']
 desktop-effects-minimize-time=160
 alttab-switcher-delay=100
 desktop-effects-tile-effect='none'
 desktop-effects-close-transition='easeOutQuad'
-enabled-extensions=@as []
+enabled-extensions=['transparent-panels@germanfr']
 desktop-effects-minimize-transition='easeInQuad'
 panel-edit-mode=false
 panels-show-delay=['1:0', '2:0']
@@ -55,7 +55,7 @@ sleep-inactive-ac-timeout=0
 sleep-inactive-battery-timeout=0
 
 [settings-daemon/plugins/xsettings]
-buttons-have-icons=false
+buttons-have-icons=true
 
 [settings-daemon/peripherals/touchpad]
 motion-threshold=1
@@ -92,23 +92,32 @@ resize-threshold=20
 tile-hud-threshold=25
 
 [desktop/interface]
+text-scaling-factor=1.0
 cursor-size=24
 first-day-of-week=1
 cursor-theme='DMZ-White'
 gtk-im-module='gtk-im-context-simple:xim'
 toolkit-accessibility=false
 cursor-blink-time=1200
-icon-theme='Paper-Mono-Dark'
-gtk-theme='Arc-Dark'
+icon-theme='Paper'
+gtk-theme='Arc-Dark-solid'
 clock-show-date=false
 
+[desktop/keybindings]
+looking-glass-keybinding=@as []
+
 [desktop/keybindings/media-keys]
+screenshot-clip=['<Primary><Shift><Alt>dollar']
 next=['XF86AudioNext', 'F9']
+area-screenshot-clip=['<Primary><Shift><Alt>numbersign']
 play=['XF86AudioPlay', 'F8']
-volume-up=['XF86AudioRaiseVolume', 'F12']
+screenshot=['<Primary><Alt>4']
 terminal=['<Super>t']
 volume-down=['AudioLowerVolume', 'F11']
+volume-up=['XF86AudioRaiseVolume', 'F12']
 search=['<Super>f']
+screensaver=['<Super>l', 'XF86ScreenSaver']
+area-screenshot=['<Primary><Alt>3']
 volume-mute=['XF86AudioMute', 'F10']
 previous=['XF86AudioPrev', 'F7']
 
@@ -143,10 +152,17 @@ layout-group=1
 [desktop/applications/terminal]
 exec='tilix'
 
+[desktop/notifications]
+remove-old=true
+
+[desktop/privacy]
+recent-files-max-age=-1
+
 [desktop/wm/preferences]
 min-window-opacity=30
 button-layout=':minimize,close'
-theme='Arc-Dark'
+theme='Arc-Dark-solid'
+titlebar-font='Noto Sans Bold 10'
 
 [desktop/a11y/applications]
 screen-keyboard-enabled=false

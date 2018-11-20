@@ -38,6 +38,9 @@ sudo apt install firefox tilix zsh silversearcher-ag snapd
 sudo snap install telegram-desktop spotify gravit-designer
 sudo snap install --classic slack
 
+# Defining ZSH as default shell
+chsh -s /bin/zsh
+
 # forcing cinnamon to restart
 if ! [hash cinnamon 2>/dev/null]; then
     pkill -HUP -f "cinnamon --replace"
