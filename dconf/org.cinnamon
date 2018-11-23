@@ -1,6 +1,7 @@
 [/]
-extension-cache-updated=1542621130
 desktop-effects-unmaximize-transition='easeNone'
+extension-cache-updated=1542621130
+desktop-effects-on-dialogs=false
 desktop-effects-maximize-transition='easeInExpo'
 applet-cache-updated=1542647893
 active-display-scale=1
@@ -13,20 +14,22 @@ enabled-desklets=['bbcwx@oak-wood.co.uk:4:25:825']
 desktop-effects-map-time=100
 panels-scale-text-icons=['1:true', '2:false']
 desktop-effects-minimize-effect='traditional'
-desklet-snap-interval=25
+desktop-effects=false
 prevent-focus-stealing=false
 panels-height=['1:28', '2:32']
-next-applet-id=42
-panel-launchers=['DEPRECATED']
+desklet-snap-interval=25
+next-applet-id=44
 desktop-effects-map-transition='easeOutQuad'
-desktop-effects-unmaximize-effect='none'
-panels-enabled=['1:0:top', '2:1:top']
 desktop-effects-tile-transition='easeInQuad'
-workspace-osd-visible=false
+desktop-effects-unmaximize-effect='none'
+panel-launchers=['DEPRECATED']
 desktop-effects-maximize-time=100
-desktop-effects-maximize-effect='none'
+panels-enabled=['1:0:top', '2:1:top']
 panels-resizable=['1:true', '2:true']
-enabled-applets=['panel1:right:10:systray@cinnamon.org:0', 'panel1:right:11:keyboard@cinnamon.org:5', 'panel1:right:19:notifications@cinnamon.org:6', 'panel1:right:13:removable-drives@cinnamon.org:7', 'panel1:right:14:user@cinnamon.org:8', 'panel1:right:15:network@cinnamon.org:9', 'panel1:right:16:power@cinnamon.org:11', 'panel1:center:0:calendar@cinnamon.org:12', 'panel1:right:18:sound@cinnamon.org:13', 'panel1:left:2:windows-quick-list@cinnamon.org:15', 'panel1:left:3:IcingTaskManager@json:26', 'panel1:left:0:Cinnamenu@json:28', 'panel1:left:1:separator@cinnamon.org:29', 'panel2:right:11:keyboard@cinnamon.org:34', 'panel2:right:13:removable-drives@cinnamon.org:35', 'panel2:right:14:user@cinnamon.org:36', 'panel2:center:0:calendar@cinnamon.org:37', 'panel2:left:2:windows-quick-list@cinnamon.org:38', 'panel2:left:3:IcingTaskManager@json:39', 'panel2:left:0:Cinnamenu@json:40', 'panel2:left:1:separator@cinnamon.org:41']
+desktop-effects-maximize-effect='none'
+desktop-effects-on-menus=false
+workspace-osd-visible=false
+enabled-applets=['panel1:right:3:systray@cinnamon.org:0', 'panel1:right:4:keyboard@cinnamon.org:5', 'panel1:right:10:notifications@cinnamon.org:6', 'panel1:right:5:removable-drives@cinnamon.org:7', 'panel1:right:6:user@cinnamon.org:8', 'panel1:right:7:network@cinnamon.org:9', 'panel1:right:8:power@cinnamon.org:11', 'panel1:center:0:calendar@cinnamon.org:12', 'panel1:right:9:sound@cinnamon.org:13', 'panel1:left:2:windows-quick-list@cinnamon.org:15', 'panel1:left:3:IcingTaskManager@json:26', 'panel1:left:0:Cinnamenu@json:28', 'panel1:left:1:separator@cinnamon.org:29', 'panel2:right:11:keyboard@cinnamon.org:34', 'panel2:right:13:removable-drives@cinnamon.org:35', 'panel2:right:14:user@cinnamon.org:36', 'panel2:center:0:calendar@cinnamon.org:37', 'panel2:left:2:windows-quick-list@cinnamon.org:38', 'panel2:left:3:IcingTaskManager@json:39', 'panel2:left:1:separator@cinnamon.org:41', 'panel1:right:1:sysmonitor@orcus:42', 'panel1:right:2:separator@cinnamon.org:43']
 desktop-effects-minimize-time=160
 alttab-switcher-delay=100
 desktop-effects-tile-effect='none'
@@ -67,7 +70,7 @@ orientation-lock=false
 [settings-daemon/peripherals/keyboard]
 repeat-interval=uint32 30
 delay=uint32 500
-numlock-state='off'
+numlock-state='on'
 
 [settings-daemon/peripherals/mouse]
 drag-threshold=8
@@ -100,7 +103,7 @@ gtk-im-module='gtk-im-context-simple:xim'
 toolkit-accessibility=false
 cursor-blink-time=1200
 icon-theme='Paper'
-gtk-theme='Arc-Dark-solid'
+gtk-theme='Arc-Darker'
 clock-show-date=false
 
 [desktop/keybindings]
@@ -109,6 +112,7 @@ looking-glass-keybinding=@as []
 [desktop/keybindings/media-keys]
 screenshot-clip=['<Primary><Shift><Alt>dollar']
 next=['XF86AudioNext', 'F9']
+video-outputs=@as []
 area-screenshot-clip=['<Primary><Shift><Alt>numbersign']
 play=['XF86AudioPlay', 'F8']
 screenshot=['<Primary><Alt>4']
