@@ -2,7 +2,7 @@
 foreground-color='#829395'
 rewrap-on-resize=true
 visible-name='Default'
-palette=['#000000', '#CC0000', '#4D9A05', '#C3A000', '#3464A3', '#754F7B', '#05979A', '#D3D6CF', '#545652', '#EF2828', '#89E234', '#FBE84F', '#729ECF', '#AC7EA8', '#34E2E2', '#EDEDEB']
+palette=['#000000', '#AA0000', '#00AA00', '#AA5400', '#0000AA', '#AA00AA', '#00AAAA', '#AAAAAA', '#545454', '#FF5454', '#54FF54', '#FFFF54', '#5454FF', '#FF54FF', '#54FFFF', '#FFFFFF']
 bold-is-bright=false
 custom-command='/usr/bin/zsh'
 badge-color-set=false
@@ -13,8 +13,9 @@ use-system-font=false
 use-custom-command=true
 bold-color-set=false
 font='Fira Code weight=450 12'
-use-theme-colors=true
-background-color='#002A35'
+use-theme-colors=false
+cursor-blink-mode='system'
+background-color='#2F2F34343F3F'
 
 [/]
 quake-specific-monitor=0
