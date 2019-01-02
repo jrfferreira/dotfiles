@@ -1,3 +1,5 @@
+
+
 #!/bin/bash
 
 PARENT_FOLDER=~/Code
@@ -58,7 +60,7 @@ if ! [hash cinnamon 2>/dev/null]; then
 fi
 
 # docker if necessary
-if ! [hash docker 2>/dev/null]; then wget -qO- https://get.docker.com/ | sh; fi
+# if ! [hash docker 2>/dev/null]; then wget -qO- https://get.docker.com/ | sh; fi
 
 # pyenv
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
