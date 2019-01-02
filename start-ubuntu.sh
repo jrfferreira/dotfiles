@@ -6,11 +6,20 @@ DOTFILES_FOLDER=$PARENT_FOLDER/dotfiles
 sudo apt upgrade
 sudo apt update
 
+# Basic icons and theme
+sudo add-apt-repository ppa:snwh/ppa
+sudo add-apt-repository ppa:noobslab/themes
+sudo apt udate
+sudo apt-get install paper-icon-theme arc-theme
+
 # fs watch limit
 echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 
 # essentials
 sudo apt-get install -y make build-essential git software-properties-common libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev golang
+
+# VPN
+sudo apt install network-manager-vpnc network-manager-vpnc-gnome
 
 git config --global credential.helper store
 git config --global user.email "jr8116@gmail.com"
@@ -18,12 +27,12 @@ git config --global user.email "jr8116@gmail.com"
 sudo apt install fonts-firacode
 
 # emacs build
-sudo apt install autoconf texinfo libx11-dev libxpm-dev libjpeg-dev libpng-dev libgif-dev libtiff-dev libgtk2.0-dev libncurses-dev gnutls-dev libgtk-3-dev
+sudo apt install autoconf texinfo libx11-dev libxpm-dev libjpeg-dev libpng-dev libgif-dev libtiff-dev libgtk2.0-dev libncurses-dev gnutls-dev libgtk-3-dev libwebkitgtk-dev
 git clone https://github.com/emacs-mirror/emacs.git $PARENT_FOLDER/emacs
 cd $PARENT_FOLDER/emacs
 git checkout emacs-26.1
 ./autogen.sh
-./configure --with-x-toolkit=gtk2
+./configure --with-x-toolkit=gtk3
 make
 sudo make install
 
