@@ -1,5 +1,3 @@
-
-
 #!/bin/bash
 
 PARENT_FOLDER=~/Code
@@ -11,14 +9,14 @@ sudo apt update
 # Basic icons and theme
 sudo add-apt-repository ppa:snwh/ppa
 sudo add-apt-repository ppa:noobslab/themes
-sudo apt udate
+sudo apt update
 sudo apt-get install paper-icon-theme arc-theme
 
 # fs watch limit
 echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
 
 # essentials
-sudo apt-get install -y make build-essential git software-properties-common libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev golang
+sudo apt-get install -y make build-essential git software-properties-common libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev golang jq
 
 # VPN
 sudo apt install network-manager-vpnc network-manager-vpnc-gnome
@@ -51,13 +49,6 @@ sudo snap install --classic slack
 
 # Defining ZSH as default shell
 chsh -s /bin/zsh
-
-# forcing cinnamon to restart
-if ! [hash cinnamon 2>/dev/null]; then
-    pkill -HUP -f "cinnamon --replace"
-    dconf load /org/cinnamon/ < $DOTFILES_FOLDER/dconf/org.cinnamon
-    dconf load /com/gexperts/Tilix/ < $DOTFILES_FOLDER/dconf/com.gexperts.Tilix
-fi
 
 # docker if necessary
 if ! [hash docker 2>/dev/null]; then wget -qO- https://get.docker.com/ | sh; fi
