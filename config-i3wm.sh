@@ -54,7 +54,7 @@ make install
 # install misc. i3 packages
 sudo apt-get install -q -y   -o Dpkg::Options::="--force-confdef" \
                         -o Dpkg::Options::="--force-confold" \
-i3lock-fancy i3status dmenu rofi dunst compton pulseaudio arandr python3-tk lxappearance xbacklight
+i3lock-fancy i3status dmenu rofi dunst compton pulseaudio arandr python3-tk lxappearance xbacklight feh
 
 git clone https://github.com/vivien/i3blocks-contrib ~/.local/src/i3blocks-contrib
 

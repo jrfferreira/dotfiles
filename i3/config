@@ -41,7 +41,7 @@ hide_edge_borders none
 popup_during_fullscreen smart
 
 # start a terminal
-bindsym $mod+Return workspace $ws1; exec --no-startup-id gnome-terminal
+bindsym $mod+Return workspace $ws1; exec --no-startup-id tilix
 
 # start a program launcher
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn 'Source Sans Pro-10' -nb '#212121' -sb '#2b83a6' -sf '#ffffff'"
@@ -152,12 +152,12 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 
 # shortcut applications
 bindsym $mod+F1                 exec tilix
-bindsym $mod+F2 workspace $ws2; exec subl
+bindsym $mod+F2 workspace $ws2; exec Emacs
 bindsym $mod+F3 workspace $ws3; exec firefox
 bindsym $mod+F4 workspace $ws4; exec nemo
 bindsym $mod+F5 workspace $ws5; exec evince
 bindsym $mod+F6 workspace $ws6; exec spotify
-bindsym $mod+F7 workspace $ws7; exec telegram
+bindsym $mod+F7 workspace $ws7; exec telegram-desktop
 bindsym $mod+F8 workspace $ws8; exec go-for-it
 bindsym Print                   exec --no-startup-id gnome-screenshot
 bindsym $mod+Shift+x            exec --no-startup-id i3lock-fancy -f Source-Sans-Pro
@@ -255,8 +255,8 @@ assign [class="Lightdm-gtk-greeter-settings"]   → $ws9
 assign [class="Software-properties-gtk"]        → $ws9
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #2b83a6 #2b83a6 #ffffff #dddddd   #2b83a6
-client.focused_inactive #212121 #212121 #86888c #292d2e   #5a5a5a
+client.focused          #212121 #212121 #ffffff #dddddd   #86888c
+client.focused_inactive #212121 #212121 #86888c #292d2e   #212121
 client.unfocused        #212121 #212121 #86888c #292d2e   #5a5a5a
 client.urgent           #d64e4e #d64e4e #ffffff #d64e4e   #d64e4e
 client.placeholder      #212121 #0c0c0c #ffffff #212121   #262626
@@ -306,9 +306,9 @@ bindsym F8 exec playerctl play
 bindsym F9 exec playerctl next
 
 # i3-gaps
-smart_gaps on
-gaps inner 12
-gaps outer 2
+#smart_gaps on
+gaps inner 16
+gaps outer 4
 
 # startup applications
 exec --no-startup-id xautolock -time 5 -locker "i3lock-fancy -f Source-Sans-Pro"
@@ -316,8 +316,4 @@ exec --no-startup-id nm-applet
 exec --no-startup-id pulseaudio --start
 exec --no-startup-id lxpolkit
 exec --no-startup-id compton -f
-
-# nitrogen background changer
-# project: https://github.com/crimsonknave/nitrogen-bg-switcher
-exec --no-startup-id exec nitrogen --restore
-
+exec --no-startup-id feh --bg-fill ~/.config/i3/wallpaper2.jpg
