@@ -1,9 +1,5 @@
 # Oxide theme
-#
-# Author: Diki Ananta <diki1aap@gmail.com>
-# Repository: https://github.com/dikiaap/dotfiles
-# License: MIT
-# i3 config file (v4)
+# Based on https://github.com/dikiaap/dotfiles
 
 # font for window titles and bar
 font pango:Source Sans Pro 10
