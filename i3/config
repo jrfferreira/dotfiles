@@ -2,7 +2,7 @@
 # Based on https://github.com/dikiaap/dotfiles
 
 # font for window titles and bar
-font pango:Source Sans Pro 10
+font pango:Source Sans Pro 14
 
 # use win key
 set $mod Mod4
@@ -20,10 +20,9 @@ set $ws3    "3:   Browsers "
 set $ws4    "4:   Files "
 set $ws5    "5:   Documents "
 set $ws6    "6:   Media "
-set $ws7    "7:   Design "
-set $ws8    "8:   Chat "
-set $ws9    "9:   General "
-set $ws10   "10:   Settings "
+set $ws7    "8:   Chat "
+set $ws8    "9:   General "
+set $ws9   "10:   Settings "
 
 # use $mod+Mouse to drag floating windows to their wanted position
 floating_modifier $mod
@@ -32,8 +31,8 @@ floating_modifier $mod
 focus_follows_mouse no
 
 # window border settings
-#default_border          none
-#default_floating_border none
+default_border          1pixel
+default_floating_border none
 
 # hiding borders adjacent to the screen edges
 hide_edge_borders none
@@ -42,7 +41,7 @@ hide_edge_borders none
 popup_during_fullscreen smart
 
 # start a terminal
-bindsym $mod+Return workspace $ws1; exec --no-startup-id alacritty
+bindsym $mod+Return workspace $ws1; exec --no-startup-id gnome-terminal
 
 # start a program launcher
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn 'Source Sans Pro-10' -nb '#212121' -sb '#2b83a6' -sf '#ffffff'"
@@ -152,15 +151,14 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 # shortcut applications
-bindsym $mod+F1                 exec gkamus
+bindsym $mod+F1                 exec tilix
 bindsym $mod+F2 workspace $ws2; exec subl
 bindsym $mod+F3 workspace $ws3; exec firefox
-bindsym $mod+F4 workspace $ws4; exec pcmanfm
+bindsym $mod+F4 workspace $ws4; exec nemo
 bindsym $mod+F5 workspace $ws5; exec evince
-bindsym $mod+F6 workspace $ws6; exec audacious
-bindsym $mod+F7 workspace $ws7; exec gcolor2
-bindsym $mod+F8 workspace $ws8; exec telegram
-bindsym $mod+F9 workspace $ws9; exec go-for-it
+bindsym $mod+F6 workspace $ws6; exec spotify
+bindsym $mod+F7 workspace $ws7; exec telegram
+bindsym $mod+F8 workspace $ws8; exec go-for-it
 bindsym Print                   exec --no-startup-id gnome-screenshot
 bindsym $mod+Shift+x            exec --no-startup-id i3lock-fancy -f Source-Sans-Pro
 
@@ -171,8 +169,8 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # manage i3 session
-bindsym $mod+Shift+e exit
-#bindsym $mod+Shift+e exec --no-startup-id i3-nagbar -t warning -f "pango:Hack 9" -m "Do you really want to exit?" -B "    Exit " "i3-msg exit" -B "    Lock " "pkill i3-nagbar && i3lock-fancy -f Source-Sans-Pro" -B "    Reboot " "pkill i3-nagbar && reboot" -B "    Shutdown " "pkill i3-nagbar && shutdown -h now"
+# bindsym $mod+Shift+e exec ~/.local/src/i3blocks-contrib/shutdown_menu
+bindsym $mod+Shift+e exec --no-startup-id i3-nagbar -t warning -f "pango:Hack 18" -m "Do you really want to exit?" -B "    Exit " "i3-msg exit" -B "    Lock " "pkill i3-nagbar && i3lock-fancy -f Source-Sans-Pro" -B "    Reboot " "pkill i3-nagbar && reboot" -B "    Shutdown " "pkill i3-nagbar && shutdown -h now"
 
 # resize window
 bindsym $mod+r mode "  "
@@ -212,13 +210,13 @@ for_window [class="Nm-connection-editor"]           floating enable
 for_window [class="Software-properties-gtk"]        floating enable
 
 # assign program to workspace
-assign [class="Alacritty"]          → $ws1
 assign [class="terminal"]           → $ws1
 assign [class="Emacs"]              → $ws2
 assign [class="Sublime"]            → $ws2
 assign [class="Chromium"]           → $ws3
 assign [class="Firefox"]            → $ws3
 assign [class="Authy"]              → $ws3
+assign [class="Files"]    	    → $ws4
 assign [class="File-roller"]        → $ws4
 assign [class="Pcmanfm"]            → $ws4
 assign [class="Evince"]             → $ws5
@@ -226,35 +224,35 @@ assign [class="ghostwriter"]        → $ws5
 assign [class="libreoffice"]        → $ws5
 assign [class="Audacious"]          → $ws6
 assign [class="vlc"]                → $ws6
-assign [class="Spotify"]            → $ws6
+assign [class="spotify"]            → $ws6
 assign [class="Gimp"]               → $ws7
 assign [class="Inkscape"]           → $ws7
-assign [class="Hexchat"]            → $ws8
-assign [class="Telegram"]           → $ws8
-assign [class="Slack"]         	    → $ws8
-assign [class="Mattermost"]   	    → $ws8
-assign [class="Upwork"]             → $ws8
-assign [class="Galculator"]         → $ws9
-assign [class="Gnome-font-viewer"]  → $ws9
-assign [class="Go-for-it"]          → $ws9
-assign [class="Gucharmap"]          → $ws9
-assign [class="keepassxc"]          → $ws9
-assign [class="Transmission-gtk"]   → $ws9
-assign [class="Bleachbit"]          → $ws10
-assign [class="Bum"]                → $ws10
-assign [class="Dconf-editor"]       → $ws10
-assign [class="Gnome-disks"]        → $ws10
-assign [class="GParted"]            → $ws10
-assign [class="Grub-customizer"]    → $ws10
-assign [class="Hardinfo"]           → $ws10
-assign [class="Lxappearance"]       → $ws10
-assign [class="Lxinput"]            → $ws10
-assign [class="Lxrandr"]            → $ws10
-assign [class="Lxtask"]             → $ws10
-assign [class="Menu"]               → $ws10
-assign [class="Obconf"]             → $ws10
-assign [class="Lightdm-gtk-greeter-settings"]   → $ws10
-assign [class="Software-properties-gtk"]        → $ws10
+assign [class="Hexchat"]            → $ws7
+assign [class="TelegramDesktop"]    → $ws7
+assign [class="Slack"]         	    → $ws7
+assign [class="Mattermost"]   	    → $ws7
+assign [class="Upwork"]             → $ws7
+assign [class="Galculator"]         → $ws8
+assign [class="Gnome-font-viewer"]  → $ws8
+assign [class="Go-for-it"]          → $ws8
+assign [class="Gucharmap"]          → $ws8
+assign [class="keepassxc"]          → $ws8
+assign [class="Transmission-gtk"]   → $ws8
+assign [class="Bleachbit"]          → $ws9
+assign [class="Bum"]                → $ws9
+assign [class="Dconf-editor"]       → $ws9
+assign [class="Gnome-disks"]        → $ws9
+assign [class="GParted"]            → $ws9
+assign [class="Grub-customizer"]    → $ws9
+assign [class="Hardinfo"]           → $ws9
+assign [class="Lxappearance"]       → $ws9
+assign [class="Lxinput"]            → $ws9
+assign [class="Lxrandr"]            → $ws9
+assign [class="Lxtask"]             → $ws9
+assign [class="Menu"]               → $ws9
+assign [class="Obconf"]             → $ws9
+assign [class="Lightdm-gtk-greeter-settings"]   → $ws9
+assign [class="Software-properties-gtk"]        → $ws9
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #2b83a6 #2b83a6 #ffffff #dddddd   #2b83a6
@@ -267,8 +265,8 @@ client.background       #212121
 # start i3bar to display a workspace bar
 bar {
     status_command          i3blocks
-    bindsym button4         nop
-    bindsym button5         nop
+#    bindsym button4         nop
+#    bindsym button5         nop
     position                top
     tray_output             primary
     separator_symbol        "·"
@@ -307,10 +305,19 @@ bindsym F7 exec playerctl previous
 bindsym F8 exec playerctl play
 bindsym F9 exec playerctl next
 
+# i3-gaps
+smart_gaps on
+gaps inner 12
+gaps outer 2
+
 # startup applications
-exec --no-startup-id xautolock -time 10 -locker "i3lock-fancy -f Source-Sans-Pro"
+exec --no-startup-id xautolock -time 5 -locker "i3lock-fancy -f Source-Sans-Pro"
 exec --no-startup-id nm-applet
 exec --no-startup-id pulseaudio --start
 exec --no-startup-id lxpolkit
-exec --no-startup-id feh --bg-fill ~/Public/desktop/dark_planet_minimalist.png
-exec --no-startup-id compton
+exec --no-startup-id compton -f
+
+# nitrogen background changer
+# project: https://github.com/crimsonknave/nitrogen-bg-switcher
+exec --no-startup-id exec nitrogen --restore
+
