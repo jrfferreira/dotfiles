@@ -2,7 +2,7 @@
 # Based on https://github.com/dikiaap/dotfiles
 
 # font for window titles and bar
-font pango:Source Sans Pro 12
+font pango:Source Sans Pro 10
 
 # use win key
 set $mod Mod4
@@ -41,7 +41,7 @@ hide_edge_borders none
 popup_during_fullscreen smart
 
 # start a terminal
-bindsym $mod+Return workspace $ws1; exec --no-startup-id tilix
+bindsym $mod+Return exec --no-startup-id tilix
 
 # start a program launcher
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn 'Source Sans Pro-10' -nb '#212121' -sb '#2b83a6' -sf '#ffffff'"
@@ -170,7 +170,7 @@ bindsym $mod+Shift+r restart
 
 # manage i3 session
 # bindsym $mod+Shift+e exec ~/.local/src/i3blocks-contrib/shutdown_menu
-bindsym $mod+Shift+e exec --no-startup-id i3-nagbar -t warning -f "pango:Hack 12" -m "Do you really want to exit?" -B "    Exit " "i3-msg exit" -B "    Lock " "pkill i3-nagbar && i3lock-fancy -f Source-Sans-Pro" -B "    Reboot " "pkill i3-nagbar && reboot" -B "    Shutdown " "pkill i3-nagbar && shutdown -h now"
+bindsym $mod+Shift+e exec --no-startup-id i3-nagbar -t warning -f "pango:Hack 10" -m "Do you really want to exit?" -B "    Exit " "i3-msg exit" -B "    Lock " "pkill i3-nagbar && i3lock-fancy -f Source-Sans-Pro" -B "    Reboot " "pkill i3-nagbar && reboot" -B "    Shutdown " "pkill i3-nagbar && shutdown -h now"
 
 # resize window
 bindsym $mod+r mode "  "
@@ -210,7 +210,7 @@ for_window [class="Nm-connection-editor"]           floating enable
 for_window [class="Software-properties-gtk"]        floating enable
 
 # assign program to workspace
-assign [class="terminal"]           → $ws1
+# assign [class="terminal"]           → $ws1
 assign [class="Emacs"]              → $ws2
 assign [class="Sublime"]            → $ws2
 assign [class="Chromium"]           → $ws3
@@ -307,8 +307,8 @@ bindsym F9 exec playerctl next
 
 # i3-gaps
 #smart_gaps on
-gaps inner 16
-gaps outer 4
+gaps inner 8
+gaps outer 2
 
 # keyboard changes
 exec --no-startup-id setxkbmap -option 'ctrl:nocaps'
