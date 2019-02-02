@@ -2,7 +2,7 @@
 # Based on https://github.com/dikiaap/dotfiles
 
 # font for window titles and bar
-font pango:Source Sans Pro 14
+font pango:Source Sans Pro 12
 
 # use win key
 set $mod Mod4
@@ -152,7 +152,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 
 # shortcut applications
 bindsym $mod+F1                 exec tilix
-bindsym $mod+F2 workspace $ws2; exec Emacs
+bindsym $mod+F2 workspace $ws2; exec emacsclient -c
 bindsym $mod+F3 workspace $ws3; exec firefox
 bindsym $mod+F4 workspace $ws4; exec nemo
 bindsym $mod+F5 workspace $ws5; exec evince
@@ -170,7 +170,7 @@ bindsym $mod+Shift+r restart
 
 # manage i3 session
 # bindsym $mod+Shift+e exec ~/.local/src/i3blocks-contrib/shutdown_menu
-bindsym $mod+Shift+e exec --no-startup-id i3-nagbar -t warning -f "pango:Hack 18" -m "Do you really want to exit?" -B "    Exit " "i3-msg exit" -B "    Lock " "pkill i3-nagbar && i3lock-fancy -f Source-Sans-Pro" -B "    Reboot " "pkill i3-nagbar && reboot" -B "    Shutdown " "pkill i3-nagbar && shutdown -h now"
+bindsym $mod+Shift+e exec --no-startup-id i3-nagbar -t warning -f "pango:Hack 12" -m "Do you really want to exit?" -B "    Exit " "i3-msg exit" -B "    Lock " "pkill i3-nagbar && i3lock-fancy -f Source-Sans-Pro" -B "    Reboot " "pkill i3-nagbar && reboot" -B "    Shutdown " "pkill i3-nagbar && shutdown -h now"
 
 # resize window
 bindsym $mod+r mode "  "
@@ -255,7 +255,7 @@ assign [class="Lightdm-gtk-greeter-settings"]   → $ws9
 assign [class="Software-properties-gtk"]        → $ws9
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #212121 #212121 #ffffff #dddddd   #86888c
+client.focused          #212121 #212121 #ffffff #dddddd   #dddddd
 client.focused_inactive #212121 #212121 #86888c #292d2e   #212121
 client.unfocused        #212121 #212121 #86888c #292d2e   #5a5a5a
 client.urgent           #d64e4e #d64e4e #ffffff #d64e4e   #d64e4e
@@ -265,8 +265,8 @@ client.background       #212121
 # start i3bar to display a workspace bar
 bar {
     status_command          i3blocks
-#    bindsym button4         nop
-#    bindsym button5         nop
+    bindsym button4         nop
+    bindsym button5         nop
     position                top
     tray_output             primary
     separator_symbol        "·"
@@ -274,13 +274,13 @@ bar {
     strip_workspace_numbers yes
 
     colors {
-        background  #212121
+        background  #141414
         statusline  #dddddd
         separator   #666666
         # class             border  backgr. text
-        focused_workspace   #2b83a6 #2b83a6 #ffffff
+        focused_workspace   #dddddd #dddddd #212121
         active_workspace    #212121 #212121 #ffffff
-        inactive_workspace  #212121 #212121 #86888c
+        inactive_workspace  #141414 #141414 #86888c
         urgent_workspace    #d64e4e #d64e4e #ffffff
         binding_mode        #229c56 #229c56 #ffffff
     }
@@ -310,10 +310,16 @@ bindsym F9 exec playerctl next
 gaps inner 16
 gaps outer 4
 
-# startup applications
+# keyboard changes
+exec --no-startup-id setxkbmap -option 'ctrl:nocaps'
+
+# startup application
 exec --no-startup-id xautolock -time 5 -locker "i3lock-fancy -f Source-Sans-Pro"
 exec --no-startup-id nm-applet
 exec --no-startup-id pulseaudio --start
 exec --no-startup-id lxpolkit
 exec --no-startup-id compton -f
 exec --no-startup-id feh --bg-fill ~/.config/i3/wallpaper2.jpg
+exec --no-startup-id emacs --daemon
+
+

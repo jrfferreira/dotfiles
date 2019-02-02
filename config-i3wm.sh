@@ -54,7 +54,7 @@ make install
 # install misc. i3 packages
 sudo apt-get install -q -y   -o Dpkg::Options::="--force-confdef" \
                         -o Dpkg::Options::="--force-confold" \
-i3lock-fancy i3status dmenu rofi dunst compton pulseaudio arandr python3-tk lxappearance xbacklight feh
+i3lock-fancy i3status dmenu rofi dunst compton pulseaudio arandr python3-tk lxappearance lxpolkit xbacklight feh acpi xautolock
 
 git clone https://github.com/vivien/i3blocks-contrib ~/.local/src/i3blocks-contrib
 
@@ -77,3 +77,7 @@ ln -sd $DOTFILES_FOLDER/i3blocks/ $I3_CONFIG_FOLDER/i3blocks
 ln -sd $DOTFILES_FOLDER/rofi/ $I3_CONFIG_FOLDER/rofi
 ln -sd $DOTFILES_FOLDER/dunst/ $I3_CONFIG_FOLDER/dunst
 ln -sd $DOTFILES_FOLDER/compton/ $I3_CONFIG_FOLDER/compton
+
+
+# X Configs for 4k display
+ln -sd ~/.Xresources $I3_CONFIG_FOLDER/compton/.Xresources

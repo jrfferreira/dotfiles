@@ -17,14 +17,10 @@ SHORT_FORMAT="${SYMB}${VOL}%"
 DEFAULT_COLOR="#f3f4f5"
 USE_ALSA_NAME=1
 
-[cpu_usage]
-command=~/.local/src/i3blocks-contrib/cpu_usage/cpu_usage
-interval=10
-LABEL=CPU 
-min_width=CPU: 100.00%
-T_WARN=50
-T_CRIT=80
-DECIMALS=2
+[cpu_usage2]
+command=~/.local/src/i3blocks-contrib/cpu_usage2/cpu_usage2
+markup=pango
+interval=persist
 
 [ram]
 command=echo -n "  "; ~/.local/src/i3blocks-contrib/memory/memory | grep -E -o '[0-9]+.[0-9]?G'
@@ -34,19 +30,19 @@ interval=30
 #command=echo -n "  "; df -h -P -l "$HOME" | awk '/\/.*/ { print $3; exit 0 }'
 #interval=30
 
-[monitors]
-command=~/.local/src/i3blocks-contrib/monitor_manager/monitor_manager
-interval=once
+[batterybar2]
+command=~/.local/src/i3blocks-contrib/batterybar2/batterybar2
+markup=pango
+interval=30
+
+#[monitors]
+#command=~/.local/src/i3blocks-contrib/monitor_manager/monitor_manager
+#interval=once
 
 [battery]
 command=~/.local/src/i3blocks-contrib/battery/battery BAT0
 interval=30
 
-[rofi-calendar]
-command=~/.local/src/i3blocks-contrib/rofi-calendar/rofi-calendar
-interval=3600
-LABEL= 
-
-#[time]
-#command=echo -n "  "; date '+%a, %d %b %H:%M'
-#interval=5
+[time]
+command=echo -n "  "; date '+%a, %d %b %H:%M  '
+interval=5
