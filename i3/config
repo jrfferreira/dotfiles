@@ -20,9 +20,9 @@ set $ws3    "3:   Browsers "
 set $ws4    "4:   Files "
 set $ws5    "5:   Documents "
 set $ws6    "6:   Media "
-set $ws7    "8:   Chat "
-set $ws8    "9:   General "
-set $ws9   "10:   Settings "
+set $ws7    "7:   Chat "
+set $ws8    "8:   General "
+set $ws9   "9:   Settings "
 
 # use $mod+Mouse to drag floating windows to their wanted position
 floating_modifier $mod
@@ -160,7 +160,7 @@ bindsym $mod+F6 workspace $ws6; exec spotify
 bindsym $mod+F7 workspace $ws7; exec telegram-desktop
 bindsym $mod+F8 workspace $ws8; exec go-for-it
 bindsym Print                   exec --no-startup-id gnome-screenshot
-bindsym $mod+Shift+x            exec --no-startup-id i3lock-fancy -f Source-Sans-Pro
+bindsym $mod+Shift+x            exec --no-startup-id i3lock-fancy -g -f Source-Sans-Pro
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -170,7 +170,12 @@ bindsym $mod+Shift+r restart
 
 # manage i3 session
 # bindsym $mod+Shift+e exec ~/.local/src/i3blocks-contrib/shutdown_menu
-bindsym $mod+Shift+e exec --no-startup-id i3-nagbar -t warning -f "pango:Hack 10" -m "Do you really want to exit?" -B "    Exit " "i3-msg exit" -B "    Lock " "pkill i3-nagbar && i3lock-fancy -f Source-Sans-Pro" -B "    Reboot " "pkill i3-nagbar && reboot" -B "    Shutdown " "pkill i3-nagbar && shutdown -h now"
+bindsym $mod+Shift+e exec --no-startup-id i3-nagbar -t warning -f "pango:Hack 10" \
+	-m "Do you really want to exit?" \
+	-B "    Exit " "emacsclient -e '(kill-emacs)' && i3-msg exit" \
+	-B "    Lock " "emacsclient -e '(kill-emacs)' && pkill i3-nagbar && i3lock-fancy -g -f Source-Sans-Pro" \
+	-B "    Reboot " "emacsclient -e '(kill-emacs)' && pkill i3-nagbar && reboot" \
+	-B "    Shutdown " "emacsclient -e '(kill-emacs)' && pkill i3-nagbar && shutdown -h now"
 
 # resize window
 bindsym $mod+r mode "  "
@@ -314,7 +319,7 @@ gaps outer 2
 exec --no-startup-id setxkbmap -option 'ctrl:nocaps'
 
 # startup application
-exec --no-startup-id xautolock -time 5 -locker "i3lock-fancy -f Source-Sans-Pro"
+exec --no-startup-id xautolock -time 5 -locker "i3lock-fancy -g -f Source-Sans-Pro"
 exec --no-startup-id nm-applet
 exec --no-startup-id pulseaudio --start
 exec --no-startup-id lxpolkit
