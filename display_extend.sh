@@ -14,5 +14,5 @@ off_w=`echo $(( ($int_w-$ext_w)/2 )) | sed 's/^-//'`
 int_h=`xrandr | sed 's/^'"${INT}"' [^0-9]* [0-9]\+x\([0-9]\+\).*$/\1/p;d'`
 tot_w=$(( $ext_w+$int_w ))
 
-xrandr --output "${INT}" --auto --pos ${off_w}x${ext_h} --scale 1x1 --output "${EXT}" --auto --scale 1.5x1.5 --pos 0x0
+xrandr --output "${INT}" --auto --scale 1x1 --output "${EXT}" --auto --scale 1.5x1.5 --right-of "${INT}"
 
