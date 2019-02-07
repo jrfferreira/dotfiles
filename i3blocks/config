@@ -3,8 +3,8 @@ separator_block_width=15
 markup=none
 
 [mediaplayer]
-command=~/.local/src/i3blocks-contrib/mediaplayer/mediaplayer
-#instance=spotify
+command=echo -n "   "; ~/.local/src/i3blocks-contrib/mediaplayer/mediaplayer
+instance=spotify
 interval=5
 signal=10
 
@@ -36,9 +36,9 @@ command=~/.local/src/i3blocks-contrib/batterybar2/batterybar2
 markup=pango
 interval=30
 
-#[monitors]
-#command=~/.local/src/i3blocks-contrib/monitor_manager/monitor_manager
-#interval=once
+[monitors]
+command=~/.local/src/i3blocks-contrib/monitor_manager/monitor_manager
+interval=once
 
 [battery]
 command=~/.local/src/i3blocks-contrib/battery/battery BAT0
@@ -46,4 +46,4 @@ interval=30
 
 [time]
 command=echo -n "  "; date '+%a, %d %b %H:%M  '
-interval=5
+interval=30

@@ -160,7 +160,7 @@ bindsym $mod+F6 workspace $ws6; exec spotify
 bindsym $mod+F7 workspace $ws7; exec telegram-desktop
 bindsym $mod+F8 workspace $ws8; exec go-for-it
 bindsym Print                   exec --no-startup-id gnome-screenshot
-bindsym $mod+Shift+x            exec --no-startup-id i3lock-fancy -g -f Source-Sans-Pro
+bindsym $mod+Shift+x            exec --no-startup-id i3lock-fancy -g -f Source-Sans-Pro && playerctl pause
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -173,7 +173,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec --no-startup-id i3-nagbar -t warning -f "pango:Hack 10" \
 	-m "Do you really want to exit?" \
 	-B "    Exit " "emacsclient -e '(kill-emacs)' && i3-msg exit" \
-	-B "    Lock " "emacsclient -e '(kill-emacs)' && pkill i3-nagbar && i3lock-fancy -g -f Source-Sans-Pro" \
+	-B "    Lock " "pkill i3-nagbar && i3lock-fancy -g -f Source-Sans-Pro && exec playerctl pause" \
 	-B "    Reboot " "emacsclient -e '(kill-emacs)' && pkill i3-nagbar && reboot" \
 	-B "    Shutdown " "emacsclient -e '(kill-emacs)' && pkill i3-nagbar && shutdown -h now"
 
