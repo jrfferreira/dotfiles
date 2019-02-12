@@ -14,15 +14,15 @@ set $up     l
 set $right  semicolon
 
 # define names for workspaces
-set $ws1    "1:   Terminal "
-set $ws2    "2:   Code "
-set $ws3    "3:   Browsers "
-set $ws4    "4:   Files "
-set $ws5    "5:   Documents "
-set $ws6    "6:   Media "
-set $ws7    "7:   Chat "
-set $ws8    "8:   General "
-set $ws9   "9:   Settings "
+set $ws1    "1:   Desktop "
+set $ws2    "2:   Terminal "
+set $ws3    "3:   Code "
+set $ws4    "4:   Browsers "
+set $ws5    "5:   Files "
+set $ws6    "6:   Documents "
+set $ws7    "7:   Media "
+set $ws8    "8:   Chat "
+set $ws9    "9:   Settings "
 
 # use $mod+Mouse to drag floating windows to their wanted position
 floating_modifier $mod
@@ -42,6 +42,7 @@ popup_during_fullscreen smart
 
 # start a terminal
 bindsym $mod+Return exec --no-startup-id tilix
+bindsym $mod+Shift+Return exec --no-startup-id emacsclient -c
 
 # start a program launcher
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn 'Source Sans Pro-10' -nb '#212121' -sb '#2b83a6' -sf '#ffffff'"
@@ -152,15 +153,15 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 
 # shortcut applications
 bindsym $mod+F1                 exec tilix
-bindsym $mod+F2 workspace $ws2; exec emacsclient -c
-bindsym $mod+F3 workspace $ws3; exec firefox
-bindsym $mod+F4 workspace $ws4; exec nemo
-bindsym $mod+F5 workspace $ws5; exec evince
-bindsym $mod+F6 workspace $ws6; exec spotify
-bindsym $mod+F7 workspace $ws7; exec telegram-desktop
-bindsym $mod+F8 workspace $ws8; exec go-for-it
+bindsym $mod+F2 		exec emacsclient -c
+bindsym $mod+F3 		exec firefox
+bindsym $mod+F4 workspace $ws5; exec nemo
+bindsym $mod+F5 workspace $ws6; exec evince
+bindsym $mod+F6 workspace $ws7; exec spotify
+bindsym $mod+F7 workspace $ws8; exec telegram-desktop
+#bindsym $mod+F8 workspace $ws8; exec go-for-it 
 bindsym Print                   exec --no-startup-id gnome-screenshot
-bindsym $mod+Shift+x            exec --no-startup-id i3lock-fancy -g -f Source-Sans-Pro && playerctl pause
+bindsym $mod+Shift+x            exec playerctl pause; exec --no-startup-id i3lock-fancy -g -f Source-Sans-Pro
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -173,7 +174,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec --no-startup-id i3-nagbar -t warning -f "pango:Hack 10" \
 	-m "Do you really want to exit?" \
 	-B "    Exit " "emacsclient -e '(kill-emacs)' && i3-msg exit" \
-	-B "    Lock " "pkill i3-nagbar && i3lock-fancy -g -f Source-Sans-Pro && exec playerctl pause" \
+	-B "    Lock " "pkill i3-nagbar && playerctl pause && i3lock-fancy -g -f Source-Sans-Pro" \
 	-B "    Reboot " "emacsclient -e '(kill-emacs)' && pkill i3-nagbar && reboot" \
 	-B "    Shutdown " "emacsclient -e '(kill-emacs)' && pkill i3-nagbar && shutdown -h now"
 
@@ -216,10 +217,10 @@ for_window [class="Software-properties-gtk"]        floating enable
 
 # assign program to workspace
 # assign [class="terminal"]           → $ws1
-assign [class="Emacs"]              → $ws2
+#assign [class="Emacs"]              → $ws2
 assign [class="Sublime"]            → $ws2
-assign [class="Chromium"]           → $ws3
-assign [class="Firefox"]            → $ws3
+#assign [class="Chromium"]           → $ws3
+#assign [class="Firefox"]            → $ws3
 assign [class="Authy"]              → $ws3
 assign [class="Files"]    	    → $ws4
 assign [class="File-roller"]        → $ws4
@@ -323,7 +324,7 @@ gaps outer 2
 exec --no-startup-id setxkbmap -option 'ctrl:nocaps'
 
 # startup application
-exec --no-startup-id xautolock -time 5 -locker "i3lock-fancy -g -f Source-Sans-Pro"
+exec --no-startup-id xautolock -time 5 -locker "playerctl pause && i3lock-fancy -g -f Source-Sans-Pro"
 exec --no-startup-id nm-applet
 exec --no-startup-id pulseaudio --start
 exec --no-startup-id lxpolkit
