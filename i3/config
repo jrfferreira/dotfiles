@@ -218,47 +218,47 @@ for_window [class="Software-properties-gtk"]        floating enable
 # assign program to workspace
 # assign [class="terminal"]           → $ws1
 #assign [class="Emacs"]              → $ws2
-assign [class="Sublime"]            → $ws2
+#assign [class="Sublime"]            → $ws2
 #assign [class="Chromium"]           → $ws3
 #assign [class="Firefox"]            → $ws3
-assign [class="Authy"]              → $ws3
-assign [class="Files"]    	    → $ws4
-assign [class="File-roller"]        → $ws4
-assign [class="Pcmanfm"]            → $ws4
-assign [class="Evince"]             → $ws5
-assign [class="ghostwriter"]        → $ws5
-assign [class="libreoffice"]        → $ws5
-assign [class="Audacious"]          → $ws6
-assign [class="vlc"]                → $ws6
-assign [class="spotify"]            → $ws6
-assign [class="Gimp"]               → $ws7
-assign [class="Inkscape"]           → $ws7
-assign [class="Hexchat"]            → $ws7
-assign [class="TelegramDesktop"]    → $ws7
-assign [class="Slack"]         	    → $ws7
-assign [class="Mattermost"]   	    → $ws7
-assign [class="Upwork"]             → $ws7
-assign [class="Galculator"]         → $ws8
-assign [class="Gnome-font-viewer"]  → $ws8
-assign [class="Go-for-it"]          → $ws8
-assign [class="Gucharmap"]          → $ws8
-assign [class="keepassxc"]          → $ws8
-assign [class="Transmission-gtk"]   → $ws8
-assign [class="Bleachbit"]          → $ws9
-assign [class="Bum"]                → $ws9
-assign [class="Dconf-editor"]       → $ws9
-assign [class="Gnome-disks"]        → $ws9
-assign [class="GParted"]            → $ws9
-assign [class="Grub-customizer"]    → $ws9
-assign [class="Hardinfo"]           → $ws9
-assign [class="Lxappearance"]       → $ws9
-assign [class="Lxinput"]            → $ws9
-assign [class="Lxrandr"]            → $ws9
-assign [class="Lxtask"]             → $ws9
-assign [class="Menu"]               → $ws9
-assign [class="Obconf"]             → $ws9
-assign [class="Lightdm-gtk-greeter-settings"]   → $ws9
-assign [class="Software-properties-gtk"]        → $ws9
+#assign [class="Authy"]              → $ws3
+#assign [class="Files"]    	    → $ws4
+#assign [class="File-roller"]        → $ws4
+#assign [class="Pcmanfm"]            → $ws4
+#assign [class="Evince"]             → $ws5
+#assign [class="ghostwriter"]        → $ws5
+#assign [class="libreoffice"]        → $ws5
+#assign [class="Audacious"]          → $ws6
+#assign [class="vlc"]                → $ws6
+#assign [class="spotify"]            → $ws6
+#assign [class="Gimp"]               → $ws7
+#assign [class="Inkscape"]           → $ws7
+#assign [class="Hexchat"]            → $ws7
+#assign [class="TelegramDesktop"]    → $ws7
+#assign [class="Slack"]         	    → $ws7
+#assign [class="Mattermost"]   	    → $ws7
+#assign [class="Upwork"]             → $ws7
+#assign [class="Galculator"]         → $ws8
+#assign [class="Gnome-font-viewer"]  → $ws8
+#assign [class="Go-for-it"]          → $ws8
+#assign [class="Gucharmap"]          → $ws8
+#assign [class="keepassxc"]          → $ws8
+#assign [class="Transmission-gtk"]   → $ws8
+#assign [class="Bleachbit"]          → $ws9
+#assign [class="Bum"]                → $ws9
+#assign [class="Dconf-editor"]       → $ws9
+#assign [class="Gnome-disks"]        → $ws9
+#assign [class="GParted"]            → $ws9
+#assign [class="Grub-customizer"]    → $ws9
+#assign [class="Hardinfo"]           → $ws9
+#assign [class="Lxappearance"]       → $ws9
+#assign [class="Lxinput"]            → $ws9
+#assign [class="Lxrandr"]            → $ws9
+#assign [class="Lxtask"]             → $ws9
+#assign [class="Menu"]               → $ws9
+#assign [class="Obconf"]             → $ws9
+#assign [class="Lightdm-gtk-greeter-settings"]   → $ws9
+#assign [class="Software-properties-gtk"]        → $ws9
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #212121 #212121 #ffffff #dddddd   #dddddd
@@ -328,7 +328,7 @@ exec --no-startup-id xautolock -time 5 -locker "playerctl pause && i3lock-fancy 
 exec --no-startup-id nm-applet
 exec --no-startup-id pulseaudio --start
 exec --no-startup-id lxpolkit
-exec --no-startup-id compton -f
+#exec --no-startup-id compton -f
 exec --no-startup-id feh --bg-fill ~/.config/i3/wallpaper2.jpg
 exec --no-startup-id emacs --daemon
 
