@@ -308,12 +308,15 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # user player controls
-bindsym F11    exec --no-startup-id amixer -q -D pulse sset Master 5%- unmute
-bindsym F12    exec --no-startup-id amixer -q -D pulse sset Master 5%+ unmute
-bindsym F10    exec --no-startup-id amixer -q -D pulse sset Master toggle
+bindsym F1     exec xbacklight -inc 20
+bindsym F2     exec xbacklight -dec 20
 bindsym F7     exec playerctl previous
 bindsym F8     exec playerctl play-pause
 bindsym F9     exec playerctl next
+bindsym F10    exec --no-startup-id amixer -q -D pulse sset Master toggle
+bindsym F11    exec --no-startup-id amixer -q -D pulse sset Master 5%- unmute
+bindsym F12    exec --no-startup-id amixer -q -D pulse sset Master 5%+ unmute
+
 
 # i3-gaps
 #smart_gaps on
@@ -328,8 +331,10 @@ exec --no-startup-id xautolock -time 5 -locker "playerctl pause && i3lock-fancy 
 exec --no-startup-id nm-applet
 exec --no-startup-id pulseaudio --start
 exec --no-startup-id lxpolkit
-#exec --no-startup-id compton -f
+exec --no-startup-id compton -f
 exec --no-startup-id feh --bg-fill ~/.config/i3/wallpaper2.jpg
+
+#user apps
+exec --no-startup-id redshift
+exec --no-startup-id megasync
 exec --no-startup-id emacs --daemon
-
-
