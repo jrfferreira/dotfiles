@@ -44,6 +44,7 @@ plugins=(
     vim-interaction
 #    virtualenvwrapper
     zsh-nvm
+    z
 )
 
 export NVM_AUTO_USE=true
