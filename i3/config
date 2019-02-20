@@ -15,14 +15,10 @@ set $right  semicolon
 
 # define names for workspaces
 set $ws1    "1:   Desktop "
-set $ws2    "2:   Terminal "
-set $ws3    "3:   Code "
-set $ws4    "4:   Browsers "
-set $ws5    "5:   Files "
-set $ws6    "6:   Documents "
-set $ws7    "7:   Media "
-set $ws8    "8:   Chat "
-set $ws9    "9:   Settings "
+set $ws2    "2:   Code "
+set $ws3    "3:   Browsers "
+set $ws4    "4:   Files "
+set $ws5    "5:   Misc "
 
 # use $mod+Mouse to drag floating windows to their wanted position
 floating_modifier $mod
@@ -42,7 +38,7 @@ popup_during_fullscreen smart
 
 # start a terminal
 bindsym $mod+Return exec --no-startup-id tilix
-bindsym $mod+Shift+Return exec --no-startup-id emacsclient -c
+bindsym $mod+Shift+Return exec --no-startup-id emacsclient -t
 
 # start a program launcher
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn 'Source Sans Pro-10' -nb '#212121' -sb '#2b83a6' -sf '#ffffff'"
@@ -77,6 +73,18 @@ bindsym $mod+Shift+Left     move left
 bindsym $mod+Shift+Down     move down
 bindsym $mod+Shift+Up       move up
 bindsym $mod+Shift+Right    move right
+
+# move focused workspace
+bindsym $mod+Ctrl+$left    move workspace to output left
+bindsym $mod+Ctrl+$down    move workspace to output down
+bindsym $mod+Ctrl+$up      move workspace to output up
+bindsym $mod+Ctrl+$right   move workspace to output right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Ctrl+Left     move workspace to output left
+bindsym $mod+Ctrl+Down     move workspace to output down
+bindsym $mod+Ctrl+Up       move workspace to output up
+bindsym $mod+Ctrl+Right    move workspace to output right
 
 # split in horizontal orientation
 bindsym $mod+h split h
@@ -152,15 +160,13 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 # shortcut applications
-bindsym $mod+F1                 exec tilix
-bindsym $mod+F2 		exec emacsclient -c
-bindsym $mod+F3 		exec firefox
-bindsym $mod+F4 workspace $ws5; exec nemo
-bindsym $mod+F5 workspace $ws6; exec evince
-bindsym $mod+F6 workspace $ws7; exec spotify
-bindsym $mod+F7 workspace $ws8; exec telegram-desktop
-#bindsym $mod+F8 workspace $ws8; exec go-for-it 
-bindsym Print                   exec --no-startup-id gnome-screenshot
+bindsym $mod+F1 workspace $ws1; exec tilix
+bindsym $mod+F2 workspace $ws2; exec emacsclient -c
+bindsym $mod+F3 workspace $ws3; exec firefox
+bindsym $mod+F4 workspace $ws4; exec nemo
+bindsym $mod+F5 workspace $ws5; exec telegram-desktop
+bindsym Print                   exec --no-startup-id gnome-screenshot -w
+bindsym Shift+Print             exec --no-startup-id gnome-screenshot -a
 bindsym $mod+Shift+x            exec playerctl pause; exec --no-startup-id i3lock-fancy -g -f Source-Sans-Pro
 
 # reload the configuration file
@@ -216,49 +222,15 @@ for_window [class="Nm-connection-editor"]           floating enable
 for_window [class="Software-properties-gtk"]        floating enable
 
 # assign program to workspace
-# assign [class="terminal"]           → $ws1
-#assign [class="Emacs"]              → $ws2
-#assign [class="Sublime"]            → $ws2
-#assign [class="Chromium"]           → $ws3
-#assign [class="Firefox"]            → $ws3
-#assign [class="Authy"]              → $ws3
-#assign [class="Files"]    	    → $ws4
-#assign [class="File-roller"]        → $ws4
-#assign [class="Pcmanfm"]            → $ws4
-#assign [class="Evince"]             → $ws5
-#assign [class="ghostwriter"]        → $ws5
-#assign [class="libreoffice"]        → $ws5
-#assign [class="Audacious"]          → $ws6
-#assign [class="vlc"]                → $ws6
-#assign [class="spotify"]            → $ws6
-#assign [class="Gimp"]               → $ws7
-#assign [class="Inkscape"]           → $ws7
-#assign [class="Hexchat"]            → $ws7
-#assign [class="TelegramDesktop"]    → $ws7
-#assign [class="Slack"]         	    → $ws7
-#assign [class="Mattermost"]   	    → $ws7
-#assign [class="Upwork"]             → $ws7
-#assign [class="Galculator"]         → $ws8
-#assign [class="Gnome-font-viewer"]  → $ws8
-#assign [class="Go-for-it"]          → $ws8
-#assign [class="Gucharmap"]          → $ws8
-#assign [class="keepassxc"]          → $ws8
-#assign [class="Transmission-gtk"]   → $ws8
-#assign [class="Bleachbit"]          → $ws9
-#assign [class="Bum"]                → $ws9
-#assign [class="Dconf-editor"]       → $ws9
-#assign [class="Gnome-disks"]        → $ws9
-#assign [class="GParted"]            → $ws9
-#assign [class="Grub-customizer"]    → $ws9
-#assign [class="Hardinfo"]           → $ws9
-#assign [class="Lxappearance"]       → $ws9
-#assign [class="Lxinput"]            → $ws9
-#assign [class="Lxrandr"]            → $ws9
-#assign [class="Lxtask"]             → $ws9
-#assign [class="Menu"]               → $ws9
-#assign [class="Obconf"]             → $ws9
-#assign [class="Lightdm-gtk-greeter-settings"]   → $ws9
-#assign [class="Software-properties-gtk"]        → $ws9
+assign [class="Transmission-gtk"]   → $ws1
+assign [class="Chromium"]           → $ws3
+assign [class="Firefox"]            → $ws3
+assign [class="Files"]    	    → $ws4
+assign [class="File-roller"]        → $ws4
+assign [class="spotify"]            → $ws5
+assign [class="TelegramDesktop"]    → $ws5
+assign [class="Slack"]         	    → $ws5
+assign [class="Mattermost"]   	    → $ws5
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #212121 #212121 #ffffff #dddddd   #dddddd
