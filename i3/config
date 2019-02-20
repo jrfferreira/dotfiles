@@ -298,8 +298,8 @@ bindsym XF86AudioRaiseVolume    exec --no-startup-id amixer -q -D pulse sset Mas
 bindsym XF86AudioMute           exec --no-startup-id amixer -q -D pulse sset Master toggle
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play-pause
@@ -308,8 +308,8 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # user player controls
-bindsym F1     exec xbacklight -inc 20
-bindsym F2     exec xbacklight -dec 20
+bindsym F1     exec xbacklight -dec 10
+bindsym F2     exec xbacklight -inc 10
 bindsym F7     exec playerctl previous
 bindsym F8     exec playerctl play-pause
 bindsym F9     exec playerctl next
@@ -327,6 +327,8 @@ gaps outer 2
 exec --no-startup-id setxkbmap -option 'ctrl:nocaps'
 
 # startup application
+exec xbacklight -set 40
+
 exec --no-startup-id xautolock -time 5 -locker "playerctl pause && i3lock-fancy -g -f Source-Sans-Pro"
 exec --no-startup-id nm-applet
 exec --no-startup-id pulseaudio --start
@@ -335,6 +337,6 @@ exec --no-startup-id compton -f
 exec --no-startup-id feh --bg-fill ~/.config/i3/wallpaper2.jpg
 
 #user apps
-exec --no-startup-id redshift
+exec --no-startup-id redshift-gtk
 exec --no-startup-id megasync
 exec --no-startup-id emacs --daemon

@@ -54,7 +54,7 @@ make install
 # install misc. i3 packages
 sudo apt-get install -q -y   -o Dpkg::Options::="--force-confdef" \
                         -o Dpkg::Options::="--force-confold" \
-i3lock-fancy i3status dmenu rofi dunst compton pulseaudio arandr python3-tk lxappearance lxpolkit xbacklight feh acpi xautolock pavucontrol
+i3lock-fancy i3status dmenu rofi dunst compton pulseaudio arandr python3-tk lxappearance lxpolkit xbacklight feh acpi xautolock pavucontrol redshift redshift-gtk
 
 git clone https://github.com/vivien/i3blocks-contrib ~/.local/src/i3blocks-contrib
 
@@ -81,3 +81,4 @@ ln -sd $DOTFILES_FOLDER/compton/ $I3_CONFIG_FOLDER/compton
 
 # X Configs for 4k display
 ln -sd ~/.Xresources $I3_CONFIG_FOLDER/compton/.Xresources
+sudo cp $DOTFILES_FOLDER/compton/.Backlight /usr/share/X11/xorg.conf.d/20-intel.conf
