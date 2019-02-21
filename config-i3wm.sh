@@ -78,6 +78,9 @@ ln -sd $DOTFILES_FOLDER/rofi/ $I3_CONFIG_FOLDER/rofi
 ln -sd $DOTFILES_FOLDER/dunst/ $I3_CONFIG_FOLDER/dunst
 ln -sd $DOTFILES_FOLDER/compton/ $I3_CONFIG_FOLDER/compton
 
+# default background
+sudo ln -sd $DOTFILES_FOLDER/backgrounds/wallpaper3.jpg /usr/share/backgrounds/default.jpg 
+sudo chmod +x /usr/share/backgrounds/default.jpg 
 
 # X Configs for 4k display
 ln -sd ~/.Xresources $I3_CONFIG_FOLDER/compton/.Xresources

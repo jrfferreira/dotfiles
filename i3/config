@@ -311,7 +311,8 @@ exec --no-startup-id nm-applet
 exec --no-startup-id pulseaudio --start
 exec --no-startup-id lxpolkit
 exec --no-startup-id compton -f
-exec --no-startup-id feh --bg-fill ~/.config/i3/wallpaper2.jpg
+#exec --no-startup-id xsetroot -solid "#141414"
+exec --no-startup-id feh --bg-fill /usr/share/backgrounds/default.jpg
 
 #user apps
 exec --no-startup-id megasync
