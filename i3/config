@@ -19,6 +19,11 @@ set $ws2    "2:   Code "
 set $ws3    "3:   Browsers "
 set $ws4    "4:   Files "
 set $ws5    "5:   Misc "
+set $ws6    "6: Workspace"
+set $ws7    "7: Workspace"
+set $ws8    "8: Workspace"
+set $ws9    "9: Workspace"
+set $ws10   "10: Workspace"
 
 # use $mod+Mouse to drag floating windows to their wanted position
 floating_modifier $mod
@@ -38,7 +43,7 @@ popup_during_fullscreen smart
 
 # start a terminal
 bindsym $mod+Return exec --no-startup-id tilix
-bindsym $mod+Shift+Return exec --no-startup-id emacsclient -t
+bindsym $mod+Shift+Return exec --no-startup-id emacsclient -c
 
 # start a program launcher
 #bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu -i -fn 'Source Sans Pro-10' -nb '#212121' -sb '#2b83a6' -sf '#ffffff'"
@@ -167,7 +172,7 @@ bindsym $mod+F4 workspace $ws4; exec nemo
 bindsym $mod+F5 workspace $ws5; exec telegram-desktop
 bindsym Print                   exec --no-startup-id gnome-screenshot -w
 bindsym Shift+Print             exec --no-startup-id gnome-screenshot -a
-bindsym $mod+Shift+x            exec playerctl pause; exec --no-startup-id i3lock-fancy -g -f Source-Sans-Pro
+bindsym $mod+Shift+x            exec ~/.config/i3/lock.sh
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -180,7 +185,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec --no-startup-id i3-nagbar -t warning -f "pango:Hack 10" \
 	-m "Do you really want to exit?" \
 	-B "    Exit " "emacsclient -e '(kill-emacs)' && i3-msg exit" \
-	-B "    Lock " "pkill i3-nagbar && playerctl pause && i3lock-fancy -g -f Source-Sans-Pro" \
+	-B "    Lock " "pkill i3-nagbar && ~/.config/i3/lock.sh" \
 	-B "    Reboot " "emacsclient -e '(kill-emacs)' && pkill i3-nagbar && reboot" \
 	-B "    Shutdown " "emacsclient -e '(kill-emacs)' && pkill i3-nagbar && shutdown -h now"
 
@@ -299,9 +304,9 @@ gaps outer 2
 exec --no-startup-id setxkbmap -option 'ctrl:nocaps'
 
 # startup application
-exec xbacklight -set 40
+exec xbacklight -set 35
 
-exec --no-startup-id xautolock -time 5 -locker "playerctl pause && i3lock-fancy -g -f Source-Sans-Pro"
+exec --no-startup-id xautolock -time 5 -locker ~/.config/i3/lock.sh
 exec --no-startup-id nm-applet
 exec --no-startup-id pulseaudio --start
 exec --no-startup-id lxpolkit
