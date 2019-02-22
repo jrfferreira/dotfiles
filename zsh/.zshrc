@@ -62,6 +62,7 @@ fi
 #alias cat=bat
 #alias ping=prettyping
 alias emacs=emacsclient -t
+alias c=clear&&reset
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
