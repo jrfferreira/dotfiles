@@ -341,11 +341,36 @@ gaps outer 2
 #smart_gaps on
 smart_borders on
 
+
+########################
+### User media keys: ###
+########################
+
+#bindsym F1     exec xbacklight -dec 10
+#bindsym F2     exec xbacklight -inc 10
+
+bindsym F1 	exec --no-startup-id ~/.config/i3/xfpm-bright.sh -d
+bindsym F2 	exec --no-startup-id ~/.config/i3/xfpm-bright.sh -i
+
+
+bindsym F7     exec playerctl previous
+bindsym F8     exec playerctl play-pause
+bindsym F9     exec playerctl next
+bindsym F10    exec --no-startup-id amixer -q -D pulse sset Master toggle
+bindsym F11    exec --no-startup-id amixer -q -D pulse sset Master 5%- unmute
+bindsym F12 exec --no-startup-id amixer -q -D pulse sset Master 5%+ unmute
+
+
+###############################
+### settings session start: ###
+###############################
+
 # secondary display
 exec --no-startup-id xrandr --output eDP1 --auto --primary --output DP1 --auto --right-of eDP1
 
 # screen bright
-exec xbacklight -set 35
+#exec xbacklight -set 35
+exec_always pkexec xfpm-power-backlight-helper --set-brightness 30000
 
 # keyboard changes
 exec --no-startup-id setxkbmap -option 'ctrl:nocaps'
@@ -360,7 +385,7 @@ exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 exec --no-startup-id nm-applet
 
 exec --no-startup-id pulseaudio
-exec --no-startup-id pa-applet
+#exec --no-startup-id pa-applet
 bindsym $mod+Ctrl+m exec pavucontrol
 
 exec --no-startup-id xfce4-power-manager
@@ -371,7 +396,7 @@ exec --no-startup-id pamac-tray
 exec --no-startup-id conky
 # exec --no-startup-id start_conky_maia
 exec --no-startup-id ~/.config/i3/lock.sh
-exec_always --no-startup-id ff-theme-util
+#exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
 #user apps
