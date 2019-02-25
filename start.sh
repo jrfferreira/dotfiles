@@ -70,6 +70,8 @@ zsh -c 'nvm install stable && nvm use stable \
 
 #i3wm
 
+sudo pacman -S playerctl
+
 # install i3blocks (default on manjaro)
 #git clone https://github.com/vivien/i3blocks $PARENT_FOLDER/i3blocks
 #cd $PARENT_FOLDER/i3blocks
@@ -84,11 +86,15 @@ git clone https://github.com/vivien/i3blocks-contrib ~/.local/src/i3blocks-contr
 
 # Linking configs
 mv ~/.i3 ~/.i3.bkp
+mv ~/.conkyrc ~/.conkyrc.bkp
+mv ~/.Xresources ~/.Xresources.bkp
 mv $CONFIG_FOLDER/i3 $CONFIG_FOLDER/i3
 mv $CONFIG_FOLDER/i3blocks/ $CONFIG_FOLDER/i3blocks.bkp
 mv $CONFIG_FOLDER/rofi/ $CONFIG_FOLDER/rofi.bkp
 mv $CONFIG_FOLDER/dunst/ $CONFIG_FOLDER/dunst.bkp
 
+ln -s $DOTFILES_FOLDER/conky/config ~/.conkyrc
+ln -s $DOTFILES_FOLDER/compton/.Xresources ~/.Xresources
 ln -s $DOTFILES_FOLDER/i3 $CONFIG_FOLDER/i3
 ln -s $DOTFILES_FOLDER/i3blocks/ $CONFIG_FOLDER/i3blocks
 ln -s $DOTFILES_FOLDER/rofi/ $CONFIG_FOLDER/rofi
