@@ -6,7 +6,7 @@ conky.config = {
 	default_color = 'FFFFFF',
 	double_buffer = true,
 	font = 'Open Sans:size=10',
-	gap_x = 20,
+	gap_x = 30,
 	gap_y = 60,
 	minimum_width = 200,
 	no_buffers = true,

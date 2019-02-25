@@ -5,8 +5,8 @@ DOTFILES_FOLDER=$PARENT_FOLDER/dotfiles
 CONFIG_FOLDER=~/.config
 
 # optimizing and updating pacman
-pacman-optimize && sync
-pacman -Syu
+sudo pacman-optimize && sync
+sudo pacman -Syu
 
 # docker
 sudo pacman -S snapd
@@ -14,11 +14,15 @@ sudo systemctl enable snapd
 sudo systemctl start snapd
 
 # themes and fonts
-pacman -S otf-fira-code
-pacman -S arc-gtk-theme
+sudo pacman -S otf-fira-code
+sudo pacman -S arc-gtk-theme
+
+# terminal
+sudo pacman -R xterm
+sudo pacman -S terminator
 
 # emacs
-pacman -Sy emacs
+sudo pacman -Sy emacs
 mv ~/.emacs.d ~/.emacs.d.bak
 mv ~/.emacs ~/.emacs.bak
 git clone https://github.com/jrfferreira/emacs-config $PARENT_FOLDER/emacs-config
@@ -70,7 +74,10 @@ zsh -c 'nvm install stable && nvm use stable \
 
 #i3wm
 
+sudo pacman -S pa-applet
+sudo pacman -S pulseaudio-alsa
 sudo pacman -S playerctl
+duso pacman -S pavucontrol
 
 # install i3blocks (default on manjaro)
 #git clone https://github.com/vivien/i3blocks $PARENT_FOLDER/i3blocks
@@ -99,3 +106,5 @@ ln -s $DOTFILES_FOLDER/i3 $CONFIG_FOLDER/i3
 ln -s $DOTFILES_FOLDER/i3blocks/ $CONFIG_FOLDER/i3blocks
 ln -s $DOTFILES_FOLDER/rofi/ $CONFIG_FOLDER/rofi
 ln -s $DOTFILES_FOLDER/dunst/ $CONFIG_FOLDER/dunst
+
+sudo cp $DOTFILES_FOLDER/compton/.Backlight /usr/share/X11/xorg.conf.d/20-intel.conf

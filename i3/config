@@ -27,7 +27,8 @@ font xft:URWGothic-Book 11
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id emacsclient -c --eval "(multi-term)"
+# bindsym $mod+Return exec --no-startup-id emacsclient -c --eval "(multi-term)"
+bindsym $mod+Return exec --no-startup-id terminator
 bindsym $mod+Shift+Return exec --no-startup-id emacsclient -c
 
 # kill focused window
@@ -42,18 +43,6 @@ bindsym $mod+Tab exec --no-startup-id rofi -show window
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
-
-################################################################################################
-## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
-################################################################################################
-
-exec --no-startup-id volumeicon
-bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
-#exec --no-startup-id pulseaudio
-#exec --no-startup-id pa-applet
-#bindsym $mod+Ctrl+m exec pavucontrol
-
-################################################################################################
 
 # Screen brightness controls
 # bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
@@ -352,6 +341,12 @@ gaps outer 2
 #smart_gaps on
 smart_borders on
 
+# secondary display
+exec --no-startup-id xrandr --output eDP1 --auto --primary --output DP1 --auto --right-of eDP1
+
+# screen bright
+exec xbacklight -set 35
+
 # keyboard changes
 exec --no-startup-id setxkbmap -option 'ctrl:nocaps'
 
@@ -363,6 +358,11 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 #exec --no-startup-id manjaro-hello
 exec --no-startup-id nm-applet
+
+exec --no-startup-id pulseaudio
+exec --no-startup-id pa-applet
+bindsym $mod+Ctrl+m exec pavucontrol
+
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
 #exec --no-startup-id clipit
@@ -371,14 +371,10 @@ exec --no-startup-id pamac-tray
 exec --no-startup-id conky
 # exec --no-startup-id start_conky_maia
 exec --no-startup-id ~/.config/i3/lock.sh
-#exec_always --no-startup-id ff-theme-util
+exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
 #user apps
 #exec --no-startup-id megasync
 exec --no-startup-id emacs --daemon
-exec --no-startup-id redshift
-
-
-# secondary display
-exec --no-startup-id xrandr --output eDP1 --auto --primary --output DP1 --auto --right-of eDP1
+exec --no-startup-id redshift-gtk
