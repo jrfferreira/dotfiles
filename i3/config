@@ -167,13 +167,10 @@ bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
 bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
-
-# Move focused container to workspace
-bindsym $mod+Ctrl+1 move container to workspace $ws1
-bindsym $mod+Ctrl+2 move container to workspace $ws2
-bindsym $mod+Ctrl+3 move container to workspace $ws3
-bindsym $mod+Ctrl+4 move container to workspace $ws4
-bindsym $mod+Ctrl+5 move container to workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
 
 # Move to workspace with focused container
 bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
@@ -232,7 +229,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e mode "$mode_system"
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id i3exit lock, mode "default"
+    bindsym l exec --no-startup-id ~/.config/i3/lock.sh, mode "default"
     bindsym s exec --no-startup-id i3exit suspend, mode "default"
     bindsym u exec --no-startup-id i3exit switch_user, mode "default"
     bindsym e exec --no-startup-id i3exit logout, mode "default"
@@ -268,7 +265,7 @@ mode "  " {
 }
 
 # Lock screen
-bindsym $mod+9 exec --no-startup-id blurlock
+bindsym $mod+Shift+x exec --no-startup-id ~/.config/i3/lock.sh
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
@@ -358,9 +355,6 @@ smart_borders on
 # keyboard changes
 exec --no-startup-id setxkbmap -option 'ctrl:nocaps'
 
-# secondary display
-xrandr --output eDP1 --auto --primary --output DP1 --auto --right-of eDP1
-
 # disabling paste with middle mouse button
 exec --no-startuo-id xmodmap -e "pointer = 1 25 3 4 5 6 7 8 9"
 
@@ -374,13 +368,17 @@ exec --no-startup-id pamac-tray
 #exec --no-startup-id clipit
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
-exec --no-startup-id start_conky_maia
-# exec --no-startup-id start_conky_green
-exec --no-startup-id xautolock -time 10 -locker blurlock
-exec_always --no-startup-id ff-theme-util
+exec --no-startup-id conky
+# exec --no-startup-id start_conky_maia
+exec --no-startup-id ~/.config/i3/lock.sh
+#exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
 #user apps
 #exec --no-startup-id megasync
 exec --no-startup-id emacs --daemon
 exec --no-startup-id redshift
+
+
+# secondary display
+exec --no-startup-id xrandr --output eDP1 --auto --primary --output DP1 --auto --right-of eDP1

@@ -55,12 +55,13 @@ ln -s $DOTFILES_FOLDER/zsh/.zshenv ~/.zshenv
 
 # nvm
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
-git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nv
+git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
 
 # pyenv
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
-sudo pacman -S pyenv-virtualenvwrapper
+sudo pacman -S python-virtualenv
+sudo pacman -S python-virtualenvwrapper
 zsh -c 'pyenv install 3.6.8 && pyuenv global system 3.6.8'
 
 # global node modules
@@ -69,25 +70,26 @@ zsh -c 'nvm install stable && nvm use stable \
 
 #i3wm
 
-# install i3blocks
-git clone https://github.com/vivien/i3blocks $PARENT_FOLDER/i3blocks
-cd $PARENT_FOLDER/i3blocks
-./autogen.sh
-./configure
-make
-make install
+# install i3blocks (default on manjaro)
+#git clone https://github.com/vivien/i3blocks $PARENT_FOLDER/i3blocks
+#cd $PARENT_FOLDER/i3blocks
+#./autogen.sh
+#./configure
+#make
+#make install
 
 # blocks contrib
 git clone https://github.com/vivien/i3blocks-contrib ~/.local/src/i3blocks-contrib
 
 
 # Linking configs
-mv $CONFIG_FOLDER/i3/config $CONFIG_FOLDER/i3/config.bkp
+mv ~/.i3 ~/.i3.bkp
+mv $CONFIG_FOLDER/i3 $CONFIG_FOLDER/i3
 mv $CONFIG_FOLDER/i3blocks/ $CONFIG_FOLDER/i3blocks.bkp
 mv $CONFIG_FOLDER/rofi/ $CONFIG_FOLDER/rofi.bkp
 mv $CONFIG_FOLDER/dunst/ $CONFIG_FOLDER/dunst.bkp
 
-ln -s $DOTFILES_FOLDER/i3/manjaro-config $CONFIG_FOLDER/i3/config
+ln -s $DOTFILES_FOLDER/i3 $CONFIG_FOLDER/i3
 ln -s $DOTFILES_FOLDER/i3blocks/ $CONFIG_FOLDER/i3blocks
 ln -s $DOTFILES_FOLDER/rofi/ $CONFIG_FOLDER/rofi
 ln -s $DOTFILES_FOLDER/dunst/ $CONFIG_FOLDER/dunst

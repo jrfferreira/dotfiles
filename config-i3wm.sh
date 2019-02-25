@@ -69,8 +69,11 @@ mv $I3_CONFIG_FOLDER/i3blocks/ $I3_CONFIG_FOLDER/i3blocks.bkp
 mv $I3_CONFIG_FOLDER/rofi/ $I3_CONFIG_FOLDER/rofi.bkp
 mv $I3_CONFIG_FOLDER/dunst/ $I3_CONFIG_FOLDER/dunst.bkp
 mv $I3_CONFIG_FOLDER/compton/ $I3_CONFIG_FOLDER/compton.bkp
+mv ~/.conkyrc ~/conkyrc.bkp
+mv ~/.i3 ~/i3.bkp
 
 
+ln -sd $DOTFILES_FOLDER/conky/config ~/.conkyrc
 ln -sd $DOTFILES_FOLDER/i3/ $I3_CONFIG_FOLDER/i3
 ln -sd $DOTFILES_FOLDER/i3status/ $I3_CONFIG_FOLDER/i3status
 ln -sd $DOTFILES_FOLDER/i3blocks/ $I3_CONFIG_FOLDER/i3blocks
