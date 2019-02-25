@@ -13,7 +13,8 @@ killall -u "$USER" -s STOP chrome
 playerctl pause > /dev/null
 
 # lock the screen
-i3lock-fancy -gf Source-Sans-Pro -- scrot -z
+# i3lock-fancy -gf Source-Sans-Pro -- scrot -z
+dm-tool lock
 
 # resume message display
 pkill -u "$USER" -USR2 dunst
