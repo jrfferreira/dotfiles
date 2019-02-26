@@ -8,18 +8,24 @@ CONFIG_FOLDER=~/.config
 sudo pacman-optimize && sync
 sudo pacman -Syu
 
-# docker
+# snap repo
 sudo pacman -S snapd
 sudo systemctl enable snapd
 sudo systemctl start snapd
+
+# docker
+sudo pacman -S docker
+sudo systemctl enable docker
+sudo systemctl start docker
+
+sudo groupadd docker
+sudo gpasswd -a $USER docker
+newgrp docker
 
 # themes and fonts
 sudo pacman -S otf-fira-code
 sudo pacman -S arc-gtk-theme
 
-# terminal
-sudo pacman -R xterm
-sudo pacman -S terminator
 
 # emacs
 sudo pacman -Sy emacs
@@ -35,7 +41,13 @@ sudo systemctl start snapd
 
 # apps
 sudo pacman -S zsh
-sudo pacman -S the_silver_search
+sudo pacman -R xterm
+sudo pacman -S terminator
+sudo pacman -S bat
+sudo pacman -S prettyping
+sudo pacman -S netcat
+
+sudo pacman -S the_silver_searcher
 sudo pacman -S firefox
 sudo snap install telegram-desktop spotify gravit-designer mattermost-desktop chromium
 sudo snap install --classic slack
