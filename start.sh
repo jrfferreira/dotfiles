@@ -37,7 +37,7 @@ sudo systemctl start snapd
 sudo pacman -S zsh
 sudo pacman -S the_silver_search
 sudo pacman -S firefox
-sudo snap install telegram-desktop spotify gravit-designer mattermost-desktop
+sudo snap install telegram-desktop spotify gravit-designer mattermost-desktop chromium
 sudo snap install --classic slack
 
 # go
