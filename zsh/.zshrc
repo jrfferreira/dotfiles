@@ -5,6 +5,7 @@ ZSH_THEME="spaceship"
 SPACESHIP_PROMPT_ORDER=(
   time          # Time stampts section
   dir           # Current directory section
+  docker        # Docker section
   git           # Git section (git_branch + git_status)
   node          # Node.js section
   ruby          # Ruby section
@@ -42,7 +43,7 @@ plugins=(
     python
     vagrant
     vim-interaction
-#    virtualenvwrapper
+    virtualenvwrapper
     zsh-nvm
     z
 )
@@ -62,6 +63,7 @@ fi
 alias cat=bat
 alias ping=prettyping
 alias emacs=emacsclient -t
+alias terminal=terminator
 alias c=clear&&reset
 
 export NVM_DIR="$HOME/.nvm"
