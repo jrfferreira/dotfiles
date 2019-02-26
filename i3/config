@@ -31,7 +31,7 @@ focus_follows_mouse no
 
 # start a terminal
 # bindsym $mod+Return exec --no-startup-id emacsclient -c --eval "(multi-term)"
-bindsym $mod+Return exec --no-startup-id terminal
+bindsym $mod+Return exec --no-startup-id terminator
 bindsym $mod+Shift+Return exec --no-startup-id emacsclient -c
 
 # kill focused window
@@ -170,10 +170,9 @@ bindsym $mod+Shift+4 move container to workspace $ws4; workspace $ws4
 bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
 
 # Open applications on specific workspaces
-# assign [class="Thunderbird"] $ws1
-# assign [class="Pale moon"] $ws2
-# assign [class="Pcmanfm"] $ws3
-# assign [class="Skype"] $ws5
+#assign [class="Telegram"] $ws5
+#assign [class="Spotify"] $ws5
+#assign [class="Mattermost"] $ws5
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 1
@@ -367,7 +366,7 @@ bindsym F12 exec --no-startup-id amixer -q -D pulse sset Master 5%+ unmute
 ###############################
 
 # secondary display
-exec --no-startup-id xrandr --output eDP1 --auto --primary --output DP1 --auto --right-of eDP1
+exec_always --no-startup-id xrandr --output eDP1 --auto --primary --output DP1 --auto --right-of eDP1
 
 # screen bright
 #exec xbacklight -set 35
@@ -377,30 +376,28 @@ exec_always pkexec xfpm-power-backlight-helper --set-brightness 30000
 exec --no-startup-id setxkbmap -option 'ctrl:nocaps'
 
 # disabling paste with middle mouse button
-exec --no-startuo-id xmodmap -e "pointer = 1 25 3 4 5 6 7 8 9"
+exec_always --no-startup-id xmodmap -e "pointer = 1 25 3 4 5 6 7 8 9"
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore; sleep 1; compton -b
-#exec --no-startup-id manjaro-hello
 exec --no-startup-id nm-applet
-
-exec --no-startup-id pulseaudio
-#exec --no-startup-id pa-applet
-bindsym $mod+Ctrl+m exec pavucontrol
 
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id pamac-tray
-#exec --no-startup-id clipit
-# exec --no-startup-id blueman-applet
-# exec_always --no-startup-id sbxkb
 exec --no-startup-id conky
-# exec --no-startup-id start_conky_maia
-exec --no-startup-id ~/.config/i3/lock.sh
-#exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
+
+exec --no-startup-id pulseaudio -v
+bindsym $mod+Ctrl+m exec pavucontrol
+
+# auto locker
+exec --no-startup-id xautolock -time 5 -locker ~/.config/i3/lock.sh
 
 #user apps
 #exec --no-startup-id megasync
 exec --no-startup-id emacs --daemon
 exec --no-startup-id redshift-gtk
+
+# misc apps organized layout
+exec --no-startup-id i3-msg "workspace $ws5; split v; exec spotify; split v; exec telegram-desktop; split h; exec mattermost-desktop; move right;"

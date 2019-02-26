@@ -8,6 +8,16 @@ CONFIG_FOLDER=~/.config
 sudo pacman-optimize && sync
 sudo pacman -Syu
 
+# pkgfile (search files inside packages)
+sudo pacman -S pkgfile
+systemctl enable pkgfile-update.timer
+systemctl start pkgfile-update.timer
+
+sudo groupadd pkgfile
+sudo gpasswd -a $USER pkgfile
+newgrp pkgfile
+
+
 # snap repo
 sudo pacman -S snapd
 sudo systemctl enable snapd
@@ -58,6 +68,9 @@ sudo pacman -S go
 # Defining ZSH as default shell
 chsh -s /bin/zsh
 
+# common request libs
+pacman -S unixodbc
+
 # oh-my-zsh
 curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | bash
 git clone https://github.com/denysdovhan/spaceship-prompt.git ~/.oh-my-zsh/custom/themes/spaceship-prompt
@@ -67,7 +80,6 @@ mv ~/.zshrc ~/.zshrc.bak
 ln -s $DOTFILES_FOLDER/zsh/.zshrc ~/.zshrc
 ln -s $DOTFILES_FOLDER/zsh/.zshenv ~/.zshenv
 
-# nvmshenv
 
 # nvm
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
@@ -111,6 +123,7 @@ mv $CONFIG_FOLDER/i3 $CONFIG_FOLDER/i3
 mv $CONFIG_FOLDER/i3blocks/ $CONFIG_FOLDER/i3blocks.bkp
 mv $CONFIG_FOLDER/rofi/ $CONFIG_FOLDER/rofi.bkp
 mv $CONFIG_FOLDER/dunst/ $CONFIG_FOLDER/dunst.bkp
+mv $CONFIG_FOLDER/terminator/ $CONFIG_FOLDER/terminator.bkp
 
 ln -s $DOTFILES_FOLDER/conky/config ~/.conkyrc
 ln -s $DOTFILES_FOLDER/compton/.Xresources ~/.Xresources
@@ -118,5 +131,6 @@ ln -s $DOTFILES_FOLDER/i3 $CONFIG_FOLDER/i3
 ln -s $DOTFILES_FOLDER/i3blocks/ $CONFIG_FOLDER/i3blocks
 ln -s $DOTFILES_FOLDER/rofi/ $CONFIG_FOLDER/rofi
 ln -s $DOTFILES_FOLDER/dunst/ $CONFIG_FOLDER/dunst
+ln -s $DOTFILES_FOLDER/terminator/ $CONFIG_FOLDER/terminator
 
 # sudo cp $DOTFILES_FOLDER/compton/.Backlight /usr/share/X11/xorg.conf.d/20-intel.conf
