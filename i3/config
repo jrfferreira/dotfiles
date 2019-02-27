@@ -296,7 +296,7 @@ bar {
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
 #	tray_output primary
-#	tray_output eDP1
+	tray_output eDP1
 
 	bindsym button4 nop
 	bindsym button5 nop
@@ -308,12 +308,12 @@ bar {
         statusline  #dddddd
         separator   #666666
 	
-      # class               border  backgr. text
+      # class               border  backgr. text 
         focused_workspace   #dddddd #dddddd #212121
         active_workspace    #212121 #212121 #ffffff
         inactive_workspace  #141414 #141414 #86888c
-        urgent_workspace    #d64e4e #d64e4e #ffffff
-        binding_mode        #229c56 #229c56 #ffffff
+        urgent_workspace    #ff6c6b #ff6c6b #ffffff
+        binding_mode        #98be65 #98be65 #ffffff
     }
 }
 
@@ -325,7 +325,7 @@ bindsym $mod+m bar mode toggle
   client.focused          #212121 #212121 #ffffff #dddddd   #dddddd
   client.focused_inactive #212121 #212121 #86888c #292d2e   #212121
   client.unfocused        #212121 #212121 #86888c #292d2e   #5a5a5a
-  client.urgent           #d64e4e #d64e4e #ffffff #d64e4e   #d64e4e
+  client.urgent           #ff6c6b #ff6c6b #ffffff #ff6c6b   #ff6c6b
   client.placeholder      #212121 #0c0c0c #ffffff #212121   #262626
   
   client.background       #212121
