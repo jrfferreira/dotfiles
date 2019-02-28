@@ -4,6 +4,12 @@ PARENT_FOLDER=~/Code
 DOTFILES_FOLDER=$PARENT_FOLDER/dotfiles
 CONFIG_FOLDER=~/.config
 
+# ssh-agent
+mv $CONFIG_FOLDER/systemd $CONFIG_FOLDER/systemd
+ln -s $DOTFILES_FOLDER/systemd $CONFIG_FOLDER/systemd
+systemctl --user enable ssh-agent
+systemctl --user start ssh-agent
+
 # optimizing and updating pacman
 sudo pacman-optimize && sync
 sudo pacman -Syu
