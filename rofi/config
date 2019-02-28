@@ -1,6 +1,6 @@
 ! Rofi config file
-rofi.lines: 12
-rofi.font: Source Sans Pro 18
+rofi.lines: 8
+rofi.font: Noto Sans 18
 rofi.show-icons: true
 rofi.theme: ~/.config/rofi/Arc-Dark.rasi
 rofi.display-window: Window
