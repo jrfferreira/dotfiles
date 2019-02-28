@@ -135,3 +135,7 @@ ln -s $DOTFILES_FOLDER/dunst/ $CONFIG_FOLDER/dunst
 ln -s $DOTFILES_FOLDER/terminator/ $CONFIG_FOLDER/terminator
 
 # sudo cp $DOTFILES_FOLDER/compton/.Backlight /usr/share/X11/xorg.conf.d/20-intel.conf
+
+# Caching SSH passphrase
+# exec ssh-agent bash
+# ssh-add
