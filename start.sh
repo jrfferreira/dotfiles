@@ -101,7 +101,8 @@ zsh -c 'nvm install stable && nvm use stable \
 sudo pacman -S pa-applet
 sudo pacman -S pulseaudio-alsa
 sudo pacman -S playerctl
-duso pacman -S pavucontrol
+sudo pacman -S pavucontrol
+sudo pacman -S light-locker
 
 # install i3blocks (default on manjaro)
 #git clone https://github.com/vivien/i3blocks $PARENT_FOLDER/i3blocks
