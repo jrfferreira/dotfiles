@@ -1,5 +1,7 @@
 export ZSH=$HOME/.oh-my-zsh
 
+eval $(ssh-agent)
+
 ZSH_THEME="spaceship"
 
 SPACESHIP_PROMPT_ORDER=(
