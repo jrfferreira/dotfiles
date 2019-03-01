@@ -18,11 +18,13 @@
   [[default]]
     allow_bold = False
     background_color = "#282c34"
+    backspace_binding = automatic
     cursor_color = "#99bb66"
     cursor_color_fg = False
+    delete_binding = automatic
     font = Fira Code weight=453 10
     foreground_color = "#abb2bf"
-    palette = "#000000:#E06C75:#98c379:#d19a66:#61aeee:#c678dd:#56b6c2:#abb2bf:#5c6370:#e06c75:#98c379:#d19a66:#62afee:#c678dd:#56b6c2:#ffffff"
+    palette = "#000000:#e06c75:#98c379:#d19a66:#61aeee:#c678dd:#56b6c2:#abb2bf:#5c6370:#e06c75:#98c379:#d19a66:#62afee:#c678dd:#56b6c2:#ffffff"
     scrollback_lines = 5000
     show_titlebar = False
     use_system_font = False

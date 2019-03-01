@@ -5,10 +5,7 @@ DOTFILES_FOLDER=$PARENT_FOLDER/dotfiles
 CONFIG_FOLDER=~/.config
 
 # ssh-agent
-mv $CONFIG_FOLDER/systemd $CONFIG_FOLDER/systemd
-ln -s $DOTFILES_FOLDER/systemd $CONFIG_FOLDER/systemd
-systemctl --user enable ssh-agent
-systemctl --user start ssh-agent
+pacman -S keychain
 
 # optimizing and updating pacman
 sudo pacman-optimize && sync
@@ -109,6 +106,8 @@ sudo pacman -S pulseaudio-alsa
 sudo pacman -S playerctl
 sudo pacman -S pavucontrol
 sudo pacman -S light-locker
+sudo pacman -S unicode-emoji
+sudo pacman -S noto-fonts-emoji
 
 # install i3blocks (default on manjaro)
 #git clone https://github.com/vivien/i3blocks $PARENT_FOLDER/i3blocks

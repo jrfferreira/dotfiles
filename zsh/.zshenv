@@ -1,5 +1,5 @@
 # ssh
-export SSH_KEY_PATH="~/.ssh/dsa_id"
+#export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # User configuration
 export EDITOR="emacsclient"

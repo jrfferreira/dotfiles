@@ -1,6 +1,12 @@
 export ZSH=$HOME/.oh-my-zsh
 
-eval $(ssh-agent)
+# keychain keeps track of ssh-agents
+[ -f $HOME/.keychain/$HOSTNAME-sh ] \
+    && . $HOME/.keychain/$HOSTNAME-sh
+
+# keychain manages ssh-agents
+type keychain >&/dev/null \
+    && keychain
 
 ZSH_THEME="spaceship"
 
