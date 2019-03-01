@@ -20,7 +20,6 @@ sudo groupadd pkgfile
 sudo gpasswd -a $USER pkgfile
 newgrp pkgfile
 
-
 # snap repo
 sudo pacman -S snapd
 sudo systemctl enable snapd
@@ -64,6 +63,9 @@ sudo pacman -S the_silver_searcher
 sudo pacman -S firefox
 sudo snap install telegram-desktop spotify gravit-designer mattermost-desktop chromium
 sudo snap install --classic slack
+
+# save/detect xrandr profile
+pacman -S autorandr
 
 # go
 sudo pacman -S go
@@ -120,7 +122,6 @@ sudo pacman -S noto-fonts-emoji
 # blocks contrib
 git clone https://github.com/vivien/i3blocks-contrib ~/.local/src/i3blocks-contrib
 
-
 # Linking configs
 mv ~/.i3 ~/.i3.bkp
 mv ~/.conkyrc ~/.conkyrc.bkp
@@ -141,7 +142,3 @@ ln -s $DOTFILES_FOLDER/terminator/ $CONFIG_FOLDER/terminator
 ln -s $DOTFILES_FOLDER/pulse/client.conf $CONFIG_FOLDER/pulse/client.conf
 
 # sudo cp $DOTFILES_FOLDER/compton/.Backlight /usr/share/X11/xorg.conf.d/20-intel.conf
-
-# Caching SSH passphrase
-# exec ssh-agent bash
-# ssh-add

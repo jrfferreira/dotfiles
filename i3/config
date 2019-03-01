@@ -160,10 +160,10 @@ bindsym $mod+2 workspace $ws2
 bindsym $mod+3 workspace $ws3
 bindsym $mod+4 workspace $ws4
 bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
 
 # Move to workspace with focused container
 bindsym $mod+Shift+1 move container to workspace $ws1; workspace $ws1
@@ -367,9 +367,6 @@ bindsym F12 exec --no-startup-id amixer -q -D pulse sset Master 5%+ unmute
 ###############################
 ### settings session start: ###
 ###############################
-
-# secondary display
-exec_always --no-startup-id xrandr --output eDP1 --auto --primary --output DP1 --auto --right-of eDP1
 
 # screen bright
 #exec xbacklight -set 35
