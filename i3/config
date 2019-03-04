@@ -61,11 +61,31 @@ bindsym $mod+F4 exec pcmanfm
 #bindsym $mod+t exec --no-startup-id pkill compton
 #bindsym $mod+Ctrl+t exec --no-startup-id compton -b
 #bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
-bindsym Print exec --no-startup-id i3-scrot
-bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
-bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
-#bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
-#bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
+
+# Screenshot script
+bindsym Print mode "$mode_screenshot"
+set $mode_screenshot (w)indow, (s)selection, (a)ll screens, (Shift+w)indow to file, (Shift+s)election to file, (Shift+a)ll screens to file
+mode "$mode_screenshot" {
+    set $to_clipboard xclip -selection clipboard -t image/png && notify-send 'Screenshot copied to Clipboard'
+    set $as_file ~/Pictures/Screenshot_$(date +"%Y-%m-%d_%H:%M:%S").png
+    set $notify_as_file  notify-send 'Screenshot saved to file'
+    set $notify_to_clipboard  notify-send 'Screenshot copied to Clipboard'
+    
+
+    bindsym s 	    exec --no-startup-id maim -s | $to_clipboard && $notify_to_clipboard, mode "default"
+    bindsym Shift+s exec --no-startup-id maim -s $as_file && $notify_as_file, mode "default"
+    
+    bindsym w 	    exec --no-startup-id maim -i $(xdotool getactivewindow) | $to_clipboard && $notify_to_clipboard, mode "default"
+    bindsym Shift+w exec --no-startup-id maim -i $(xdotool getactivewindow) $as_file && $notify_as_file, mode "default"
+    
+    bindsym a 	    exec --no-startup-id maim | $to_clipboard && $notify_to_clipboard, mode "default"
+    bindsym Shift+a exec --no-startup-id maim $as_file && $notify_as_file, mode "default"
+
+    # exit system mode: "Enter" or "Escape"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
 
 # change focus
 bindsym $mod+j		focus left

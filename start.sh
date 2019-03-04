@@ -110,6 +110,7 @@ sudo pacman -S pavucontrol
 sudo pacman -S light-locker
 sudo pacman -S unicode-emoji
 sudo pacman -S noto-fonts-emoji
+sudo pacman -S maim
 
 # install i3blocks (default on manjaro)
 #git clone https://github.com/vivien/i3blocks $PARENT_FOLDER/i3blocks
