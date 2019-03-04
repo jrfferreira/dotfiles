@@ -66,12 +66,11 @@ bindsym $mod+F4 exec pcmanfm
 bindsym Print mode "$mode_screenshot"
 set $mode_screenshot (w)indow, (s)selection, (a)ll screens, (Shift+w)indow to file, (Shift+s)election to file, (Shift+a)ll screens to file
 mode "$mode_screenshot" {
-    set $to_clipboard xclip -selection clipboard -t image/png && notify-send 'Screenshot copied to Clipboard'
-    set $as_file ~/Pictures/Screenshot_$(date +"%Y-%m-%d_%H:%M:%S").png
-    set $notify_as_file  notify-send 'Screenshot saved to file'
-    set $notify_to_clipboard  notify-send 'Screenshot copied to Clipboard'
+    set $to_clipboard		xclip -selection clipboard -t image/png
+    set $as_file 		~/Pictures/Screenshot_$(date +"%Y-%m-%d_%H:%M:%S").png
+    set $notify_as_file  	notify-send 'Saved to Pictures'
+    set $notify_to_clipboard  	notify-send 'Copied to Clipboard'
     
-
     bindsym s 	    exec --no-startup-id maim -s | $to_clipboard && $notify_to_clipboard, mode "default"
     bindsym Shift+s exec --no-startup-id maim -s $as_file && $notify_as_file, mode "default"
     
