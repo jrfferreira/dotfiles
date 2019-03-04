@@ -1,4 +1,5 @@
 [global_config]
+  borderless = True
   title_font = Fira Code weight=453 9
   title_hide_sizetext = True
   title_inactive_fg_color = "#555753"
@@ -25,6 +26,8 @@
     font = Fira Code weight=453 10
     foreground_color = "#abb2bf"
     palette = "#000000:#e06c75:#98c379:#d19a66:#61aeee:#c678dd:#56b6c2:#abb2bf:#5c6370:#e06c75:#98c379:#d19a66:#62afee:#c678dd:#56b6c2:#ffffff"
+    scrollback_infinite = True
     scrollback_lines = 5000
+    scrollbar_position = hidden
     show_titlebar = False
     use_system_font = False
