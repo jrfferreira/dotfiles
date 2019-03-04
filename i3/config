@@ -371,6 +371,7 @@ bindsym F12 exec --no-startup-id amixer -q -D pulse sset Master 5%+ unmute
 # screen bright
 #exec xbacklight -set 35
 exec_always pkexec xfpm-power-backlight-helper --set-brightness 30000
+exec --no-startup-id autorandr -c
 
 # keyboard changes
 exec --no-startup-id setxkbmap -option 'ctrl:nocaps'

@@ -142,3 +142,8 @@ ln -s $DOTFILES_FOLDER/terminator/ $CONFIG_FOLDER/terminator
 ln -s $DOTFILES_FOLDER/pulse/client.conf $CONFIG_FOLDER/pulse/client.conf
 
 # sudo cp $DOTFILES_FOLDER/compton/.Backlight /usr/share/X11/xorg.conf.d/20-intel.conf
+
+# nordvpn
+yaourt -S nordvpn-bin
+systemctl enable nordvpnd.service
+systemctl start nordvpnd.service
