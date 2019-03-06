@@ -5,8 +5,9 @@ export ZSH=$HOME/.oh-my-zsh
     && . $HOME/.keychain/$HOSTNAME-sh
 
 # keychain manages ssh-agents
-type keychain >&/dev/null \
-    && keychain
+if command -v keychain 1>/dev/null 2>&1; then
+  eval "$(keychain --eval)"
+fi
 
 ZSH_THEME="spaceship"
 
