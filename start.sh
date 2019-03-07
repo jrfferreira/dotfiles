@@ -101,6 +101,24 @@ zsh -c 'pyenv install 3.6.8 && pyuenv global system 3.6.8'
 zsh -c 'nvm install stable && nvm use stable \
 && npm install -g flow flow-bin typescript tern eslint prettier babel-eslint eslint-plugin-react js-beautify eslint-plugin-mocha eslint-plugin-flowtype eslint-plugin-jasmine eslint-plugin-jsx-control-statements eslint-plugin-promise eslint-plugin-jest eslint-plugin-import eslint-plugin-prettier eslint-config-prettier'
 
+
+
+
+# Bluetooth
+sudo pacman -S blueman
+sudo pacman -S pulseaudio-bluetooth
+sudo pacman -S bluez
+sudo pacman -S bluez-libs
+sudo pacman -S bluez-utils
+sudo rfkill unblock bluetooth
+
+#
+# Known issue:
+#  - https://askubuntu.com/questions/689281/pulseaudio-can-not-load-bluetooth-module
+#  - https://wiki.archlinux.org/index.php/Bluetooth_headset#Pairing_works,_but_connecting_does_not
+# module-bluetooth-discover need to start after X11 session
+#
+
 #i3wm
 
 sudo pacman -S pa-applet
@@ -111,6 +129,7 @@ sudo pacman -S light-locker
 sudo pacman -S unicode-emoji
 sudo pacman -S noto-fonts-emoji
 sudo pacman -S maim
+
 
 # install i3blocks (default on manjaro)
 #git clone https://github.com/vivien/i3blocks $PARENT_FOLDER/i3blocks

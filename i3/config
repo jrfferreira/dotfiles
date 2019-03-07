@@ -38,7 +38,6 @@ bindsym $mod+Shift+Return exec --no-startup-id emacsclient -c
 bindsym $mod+Shift+q kill
 
 # start program launcher
-#bindsym $mod+d exec --no-startup-id dmenu_recency
 bindsym $mod+d exec --no-startup-id rofi -show drun
 
 # switching window with win+tab
@@ -47,20 +46,10 @@ bindsym $mod+Tab exec --no-startup-id rofi -show window
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
 
-# Screen brightness controls
-# bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
-# bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
-
 # Start Applications
-bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
-bindsym $mod+F3 exec firefox
-bindsym $mod+F4 exec pcmanfm
-# bindsym $mod+F3 exec ranger
-# bindsym $mod+Shift+F3 exec gksu pcmanfm
-#bindsym $mod+F5 exec terminal -e 'mocp'
-#bindsym $mod+t exec --no-startup-id pkill compton
-#bindsym $mod+Ctrl+t exec --no-startup-id compton -b
-#bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
+bindsym $mod+Ctrl+3 exec firefox
+bindsym $mod+Ctrl+4 exec pcmanfm
+bindsym $mod+Ctrl+Shift+4 exec --no-startup-id emacsclient -c --eval "(ranger)"
 
 # Screenshot script
 bindsym Print mode "$mode_screenshot"
@@ -192,37 +181,40 @@ bindsym $mod+Shift+4 move container to workspace $ws4; workspace $ws4
 bindsym $mod+Shift+5 move container to workspace $ws5; workspace $ws5
 
 # Open applications on specific workspaces
-#assign [class="Telegram"] $ws5
-#assign [class="Spotify"] $ws5
-#assign [class="Mattermost"] $ws5
+assign [class="Chromium"] 	$ws1
+assign [class="Firefox"] 	$ws3
+assign [class="Telegram"] 	$ws5
+assign [class="Spotify"] 	$ws5
+assign [class="Mattermost"] 	$ws5
 
 # Open specific applications in floating mode
-for_window [title="alsamixer"] floating enable border pixel 1
-for_window [class="calamares"] floating enable border normal
-for_window [class="Clipgrab"] floating enable
-for_window [title="File Transfer*"] floating enable
-for_window [class="Galculator"] floating enable border pixel 1
-for_window [class="GParted"] floating enable border normal
-for_window [title="i3_help"] floating enable sticky enable border normal
-for_window [class="Lightdm-settings"] floating enable
-for_window [class="Lxappearance"] floating enable sticky enable border normal
-for_window [class="Manjaro-hello"] floating enable
-for_window [class="Manjaro Settings Manager"] floating enable border normal
-for_window [title="MuseScore: Play Panel"] floating enable
-for_window [class="Nitrogen"] floating enable sticky enable border normal
-for_window [class="Oblogout"] fullscreen enable
-for_window [class="octopi"] floating enable
-for_window [title="About Pale Moon"] floating enable
-for_window [class="Pamac-manager"] floating enable
-for_window [class="Pavucontrol"] floating enable
-for_window [class="qt5ct"] floating enable sticky enable border normal
-for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
-for_window [class="Simple-scan"] floating enable border normal
-for_window [class="(?i)System-config-printer.py"] floating enable border normal
-for_window [class="Skype"] floating enable border normal
-for_window [class="Timeset-gui"] floating enable border normal
-for_window [class="(?i)virtualbox"] floating enable border normal
-for_window [class="Xfburn"] floating enable
+for_window [title="alsamixer"]				  floating enable border pixel 1
+for_window [title="Bluetooth"]				  floating enable border pixel 1
+for_window [class="calamares"] 		 		  floating enable border normal
+for_window [class="Clipgrab"] 		 		  floating enable
+for_window [title="File Transfer*"] 	 		  floating enable
+for_window [class="Galculator"] 	 		  floating enable border pixel 1
+for_window [class="GParted"] 		 		  floating enable border normal
+for_window [title="i3_help"] 		 		  floating enable sticky enable border normal
+for_window [class="Lightdm-settings"] 	 		  floating enable
+for_window [class="Lxappearance"] 	 		  floating enable sticky enable border normal
+for_window [class="Manjaro-hello"] 	 		  floating enable
+for_window [class="Manjaro Settings Manager"] 		  floating enable border normal
+for_window [title="MuseScore: Play Panel"] 		  floating enable
+for_window [class="Nitrogen"] 	   			  floating enable sticky enable border normal
+for_window [class="Oblogout"] 				  fullscreen enable
+for_window [class="octopi"]				  floating enable
+for_window [title="About Pale Moon"]   	 		  floating enable
+for_window [class="Pamac-manager"]     	 		  floating enable
+for_window [class="Pavucontrol"]       	 		  floating enable
+for_window [class="qt5ct"] 	       	 		  floating enable sticky enable border normal
+for_window [class="Qtconfig-qt4"]      	 		  floating enable sticky enable border normal
+for_window [class="Simple-scan"]       	 		  floating enable border normal
+for_window [class="(?i)System-config-printer.py"]	  enable border normal
+for_window [class="Skype"] 			       	  enable border normal
+for_window [class="Timeset-gui"] 		       	  enable border normal
+for_window [class="(?i)virtualbox"] 		       	  enable border normal
+for_window [class="Xfburn"] 			       	  enable
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -232,9 +224,6 @@ bindsym $mod+Shift+c reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-
-# exit i3 (logs you out of your X session)
-#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Set shut down, restart and locking features
 bindsym $mod+Shift+e mode "$mode_system"
@@ -322,7 +311,6 @@ bar {
 
 	bindsym button4 nop
 	bindsym button5 nop
-#   font xft:URWGothic-Book 11
 	strip_workspace_numbers yes
 
     colors {
@@ -368,19 +356,15 @@ smart_borders on
 ### User media keys: ###
 ########################
 
-#bindsym F1     exec xbacklight -dec 10
-#bindsym F2     exec xbacklight -inc 10
-
 bindsym F1 	exec --no-startup-id ~/.config/i3/xfpm-bright.sh -d
-bindsym F2 	exec --no-startup-id ~/.config/i3/xfpm-bright.sh -i
+bindsym F2	exec --no-startup-id ~/.config/i3/xfpm-bright.sh -i
 
-
-bindsym F7     exec playerctl previous
-bindsym F8     exec playerctl play-pause
-bindsym F9     exec playerctl next
-bindsym F10    exec --no-startup-id amixer -q -D pulse sset Master toggle
-bindsym F11    exec --no-startup-id amixer -q -D pulse sset Master 5%- unmute
-bindsym F12 exec --no-startup-id amixer -q -D pulse sset Master 5%+ unmute
+bindsym F7	exec playerctl previous
+bindsym F8     	exec playerctl play-pause
+bindsym F9     	exec playerctl next
+bindsym F10    	exec --no-startup-id amixer -q -D pulse sset Master toggle
+bindsym F11     exec --no-startup-id amixer -q -D pulse sset Master 5%- unmute
+bindsym F12    	exec --no-startup-id amixer -q -D pulse sset Master 5%+ unmute
 
 
 ###############################
@@ -388,7 +372,6 @@ bindsym F12 exec --no-startup-id amixer -q -D pulse sset Master 5%+ unmute
 ###############################
 
 # screen bright
-#exec xbacklight -set 35
 exec_always --no-startup-id pkexec xfpm-power-backlight-helper --set-brightness 30000
 exec_always --no-startup-id redshift -P -t 3900k:3200k
 exec --no-startup-id autorandr -c
@@ -410,8 +393,8 @@ exec --no-startup-id pamac-tray
 exec --no-startup-id conky
 exec_always --no-startup-id fix_xcursor
 
-# exec --no-startup-id pulseaudio --start -v
 exec --no-startup-id pa-applet
+exec --no-startup-id blueman-applet
 
 # auto locker
 exec --no-startup-id xautolock -time 5 -locker ~/.config/i3/lock.sh
@@ -419,7 +402,6 @@ exec --no-startup-id xautolock -time 5 -locker ~/.config/i3/lock.sh
 #user apps
 #exec --no-startup-id megasync
 exec --no-startup-id emacs --daemon
-#exec --no-startup-id redshift-gtk
 
 # misc apps organized layout
-exec --no-startup-id i3-msg "workspace $ws5; split v; exec spotify; split v; exec telegram-desktop; split h; exec mattermost-desktop; move right;"
+exec --no-startup-id i3-msg "workspace $ws5; split v; exec spotify; exec telegram-desktop; exec mattermost-desktop; move right;"
