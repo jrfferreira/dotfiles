@@ -143,6 +143,7 @@ bindsym $mod+a focus parent
 
 # Sound control
 bindsym $mod+Ctrl+m exec pavucontrol
+bindsym $mod+Ctrl+b exec terminator -x bluetoothctl
 
 # move the currently focused window to the scratchpad
 # bindsym $mod+Shift+minus move scratchpad
