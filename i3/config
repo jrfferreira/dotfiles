@@ -8,6 +8,7 @@ set $mod Mod4
 # workspace_layout tabbed <stacking|tabbed>
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
+default_border pixel 1
 new_window pixel 1
 new_float normal
 
@@ -17,7 +18,7 @@ hide_edge_borders none
 # change borders
 bindsym $mod+u border none
 bindsym $mod+y border pixel 1
-bindsym $mod+n border normal
+# bindsym $mod+n border normal
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -315,15 +316,15 @@ bar {
 	strip_workspace_numbers yes
 
     colors {
-        background  #141414
+        background  #2e3436
         statusline  #dddddd
-        separator   #666666
+        separator   #f0f0f0
 	
       # class               border  backgr. text 
-        focused_workspace   #dddddd #dddddd #212121
-        active_workspace    #212121 #212121 #ffffff
-        inactive_workspace  #141414 #141414 #86888c
-        urgent_workspace    #ff6c6b #ff6c6b #ffffff
+        focused_workspace   #2e3436 #2e3436 #98be65
+        active_workspace    #2e3436 #2e3436 #ffffff
+        inactive_workspace  #2e3436 #2e3436 #86888c
+        urgent_workspace    #2e3436 #2e3436 #ff6c6b
         binding_mode        #98be65 #98be65 #ffffff
     }
 }
@@ -333,13 +334,13 @@ bindsym $mod+m bar mode toggle
 
 # Theme colors
 # class                   border  backgr. text    indicator child_border
-  client.focused          #212121 #212121 #ffffff #dddddd   #dddddd
-  client.focused_inactive #212121 #212121 #86888c #292d2e   #212121
-  client.unfocused        #212121 #212121 #86888c #292d2e   #5a5a5a
+  client.focused          #98be65 #98be65 #2e3436 #98be65   #98be65
+  client.focused_inactive #2e3436 #2e3436 #86888c #2e3436   #2e3436
+  client.unfocused        #2e3436 #2e3436 #86888c #2e3436   #2e3436
   client.urgent           #ff6c6b #ff6c6b #ffffff #ff6c6b   #ff6c6b
-  client.placeholder      #212121 #0c0c0c #ffffff #212121   #262626
+  client.placeholder      #2e3436 #0c0c0c #ffffff #2e3436   #262626
   
-  client.background       #212121
+  client.background       #2e3436
 
 #############################
 ### settings for i3-gaps: ###

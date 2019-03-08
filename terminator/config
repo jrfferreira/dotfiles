@@ -25,7 +25,7 @@
     delete_binding = automatic
     font = Fira Code weight=453 10
     foreground_color = "#abb2bf"
-    palette = "#000000:#e06c75:#98c379:#d19a66:#61aeee:#c678dd:#56b6c2:#abb2bf:#5c6370:#e06c75:#98c379:#d19a66:#62afee:#c678dd:#56b6c2:#ffffff"
+    palette = "#212121:#e06c75:#98c379:#d19a66:#61aeee:#c678dd:#56b6c2:#abb2bf:#2e3436:#e06c75:#98c379:#d19a66:#62afee:#c678dd:#56b6c2:#ffffff"
     scrollback_infinite = True
     scrollback_lines = 5000
     scrollbar_position = hidden
