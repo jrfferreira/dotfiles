@@ -120,7 +120,7 @@ sudo rfkill unblock bluetooth
 #
 
 #i3wm
-
+sudo pacman -S perl-anyevent-i3
 sudo pacman -S pa-applet
 sudo pacman -S pulseaudio-alsa
 sudo pacman -S playerctl

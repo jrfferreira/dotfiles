@@ -43,6 +43,7 @@ plugins=(
     common-aliases
 #    django
 #    fabric
+    emoji
     grunt
     gulp
     jsontools

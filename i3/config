@@ -406,4 +406,4 @@ exec --no-startup-id xautolock -time 5 -locker ~/.config/i3/lock.sh
 exec --no-startup-id emacs --daemon
 
 # misc apps organized layout
-exec --no-startup-id i3-msg "workspace $ws5; split v; exec spotify; exec telegram-desktop; exec mattermost-desktop; move right;"
+exec --no-startup-id i3-msg "workspace $ws5; append_layout ~/.config/i3/layout/misc.json; exec spotify; exec telegram-desktop; exec mattermost-desktop"
