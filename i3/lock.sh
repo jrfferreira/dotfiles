@@ -1,11 +1,10 @@
 
 #!/bin/bash
+
+# get current player status
 player_last_status=$(playerctl status)
 
 do_lock () {
-    # get current player status
-    $player_last_status:=$(playerctl status)
-
     # suspend message display
     pkill -u "$USER" -USR1 dunst
 
@@ -18,6 +17,8 @@ do_lock () {
     then
 	playerctl pause
     fi
+    
+    light-locker-command -l
 }
 
 do_unlock () {
@@ -37,11 +38,11 @@ do_unlock () {
 
 
 # lock the screen
-do_lock && light-locker-command -l
+do_lock
 
 # wait for unlock signal
 gdbus monitor -y -d org.freedesktop.login1 | while read line; do
     grep -qo "'Active': <true>" && do_unlock;
     exit;
-done;
+done; exit;
 
