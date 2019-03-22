@@ -78,10 +78,9 @@ chsh -s /bin/zsh
 # common request libs
 pacman -S unixodbc
 
-# oh-my-zsh
-curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | bash
-git clone https://github.com/denysdovhan/spaceship-prompt.git ~/.oh-my-zsh/custom/themes/spaceship-prompt
-ln -s ~/.oh-my-zsh/custom/themes/spaceship-prompt/spaceship.zsh-theme ~/.oh-my-zsh/custom/themes/spaceship.zsh-theme
+# ZSH
+
+yaourt -S antigen-git
 mv ~/.zshenv ~/.zshenv.bak
 mv ~/.zshrc ~/.zshrc.bak
 ln -s $DOTFILES_FOLDER/zsh/.zshrc ~/.zshrc
@@ -90,14 +89,14 @@ ln -s $DOTFILES_FOLDER/zsh/.zshenv ~/.zshenv
 
 # pyenv
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
-curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | zsh
 sudo pacman -S python-virtualenv
 sudo pacman -S python-virtualenvwrapper
 sudo pacman -S python-pylint
 zsh -c 'pyenv install 3.6.8 && pyenv global system 3.6.8'
 
 # nvm
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | zsh
 git clone https://github.com/lukechilds/zsh-nvm ~/.oh-my-zsh/custom/plugins/zsh-nvm
 
 # global node modules
