@@ -37,6 +37,8 @@ newgrp docker
 # themes and fonts
 sudo pacman -S otf-fira-code
 sudo pacman -S arc-gtk-theme
+sudo pacman -S unicode-emoji
+sudo pacman -S noto-fonts-emoji
 
 
 # emacs
@@ -126,8 +128,6 @@ sudo pacman -S pulseaudio-alsa
 sudo pacman -S playerctl
 sudo pacman -S pavucontrol
 sudo pacman -S light-locker
-sudo pacman -S unicode-emoji
-sudo pacman -S noto-fonts-emoji
 sudo pacman -S maim
 
 
