@@ -4,7 +4,7 @@ PARENT_FOLDER=~/Code
 DOTFILES_FOLDER=$PARENT_FOLDER/dotfiles
 
 # ZSH
-sudo pacman -S zsh
+sudo pacman --noconfirm -S zsh
 
 # Defining ZSH as default shell
 chsh -s /bin/zsh

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # pkgfile (search files inside packages)
-sudo pacman -S pkgfile
+sudo pacman --noconfirm -S pkgfile
 systemctl enable pkgfile-update.timer
 systemctl start pkgfile-update.timer
 

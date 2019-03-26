@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # docker
-sudo pacman -S docker
+sudo pacman --noconfirm -S docker
 sudo systemctl enable docker
 sudo systemctl start docker
 

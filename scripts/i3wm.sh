@@ -5,11 +5,11 @@ DOTFILES_FOLDER=$PARENT_FOLDER/dotfiles
 CONFIG_FOLDER=~/.config
 
 # Bluetooth
-sudo pacman -S blueman
-sudo pacman -S pulseaudio-bluetooth
-sudo pacman -S bluez
-sudo pacman -S bluez-libs
-sudo pacman -S bluez-utils
+sudo pacman --noconfirm -S blueman
+sudo pacman --noconfirm -S pulseaudio-bluetooth
+sudo pacman --noconfirm -S bluez
+sudo pacman --noconfirm -S bluez-libs
+sudo pacman --noconfirm -S bluez-utils
 sudo rfkill unblock bluetooth
 
 #
@@ -20,13 +20,13 @@ sudo rfkill unblock bluetooth
 #
 
 #i3wm
-sudo pacman -S perl-anyevent-i3
-sudo pacman -S pa-applet
-sudo pacman -S pulseaudio-alsa
-sudo pacman -S playerctl
-sudo pacman -S pavucontrol
-sudo pacman -S light-locker
-sudo pacman -S maim
+sudo pacman --noconfirm -S perl-anyevent-i3
+sudo pacman --noconfirm -S pa-applet
+sudo pacman --noconfirm -S pulseaudio-alsa
+sudo pacman --noconfirm -S playerctl
+sudo pacman --noconfirm -S pavucontrol
+sudo pacman --noconfirm -S light-locker
+sudo pacman --noconfirm -S maim
 
 
 # install i3blocks (default on manjaro)
