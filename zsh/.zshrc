@@ -16,6 +16,7 @@ SPACESHIP_PROMPT_ORDER=(
   ruby          # Ruby section
   golang        # Go section
   php           # PHP section
+  rust          # Rust section
   venv          # virtualenv section
   pyenv         # Pyenv section
   line_sep      # Line break
@@ -36,6 +37,7 @@ antigen bundle node
 antigen bundle npm
 antigen bundle pip
 antigen bundle python
+antigen bundle rust
 antigen bundle vim-interaction
 antigen bundle virtualenvwrapper
 antigen bundle z
