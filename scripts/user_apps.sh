@@ -12,6 +12,7 @@ sudo pacman --noconfirm -S noto-fonts-emoji
 sudo pacman -R xterm
 sudo pacman --noconfirm -S terminator
 sudo pacman --noconfirm -S bat
+sudo pacman --noconfirm -S fzf
 sudo pacman --noconfirm -S prettyping
 sudo pacman --noconfirm -S netcat
 sudo pacman --noconfirm -S the_silver_searcher

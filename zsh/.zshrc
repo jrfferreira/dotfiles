@@ -41,6 +41,7 @@ antigen bundle rust
 antigen bundle vim-interaction
 antigen bundle virtualenvwrapper
 antigen bundle z
+antigen bundle fzf
 antigen bundle yarn
 
 # external
