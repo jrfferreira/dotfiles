@@ -1,4 +1,4 @@
-source /usr/share/zsh/share/antigen.zsh
+source ~/Code/dotfiles/zsh/antigen.zsh
 
 export ZSH=$HOME/.oh-my-zsh
 export LANG=en_US.UTF-8

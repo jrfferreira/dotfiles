@@ -15,7 +15,7 @@ sudo pacman --noconfirm -S the_silver_searcher
 chsh -s /bin/zsh
 
 # Using antigen to keep zsh plugins
-yaourt -S antigen-git
+curl -L git.io/antigen > $DOTFILES_FOLDER/zsh/antigen.zsh
 
 # Linking settings
 mv ~/.zshenv ~/.zshenv.bak
