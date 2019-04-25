@@ -20,6 +20,9 @@ sudo rfkill unblock bluetooth
 #
 
 #i3wm
+sudo pacman --noconfirm -S i3-gaps
+sudo pacman --noconfirm -S i3status
+sudo pacman --noconfirm -S i3exit
 sudo pacman --noconfirm -S perl-anyevent-i3
 sudo pacman --noconfirm -S pa-applet
 sudo pacman --noconfirm -S pulseaudio-alsa
@@ -27,6 +30,7 @@ sudo pacman --noconfirm -S playerctl
 sudo pacman --noconfirm -S pavucontrol
 sudo pacman --noconfirm -S light-locker
 sudo pacman --noconfirm -S maim
+sudo pacman --noconfirm -S nitrogen
 
 
 # install i3blocks (default on manjaro)

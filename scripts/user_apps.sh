@@ -1,5 +1,7 @@
 #!/bin/bash
 
+DOTFILES_FOLDER=$PARENT_FOLDER/dotfiles
+CONFIG_FOLDER=~/.config
 # themes and fonts
 sudo pacman --noconfirm -S otf-fira-code
 sudo pacman --noconfirm -S arc-gtk-theme
@@ -20,3 +22,6 @@ sudo pacman --noconfirm -S firefox
 sudo snap install telegram-desktop spotify gravit-designer mattermost-desktop chromium
 sudo snap install --classic slack
 sudo snap install --classic skype
+
+sudo pacman --noconfirm -S redshift
+ln -s $DOTFILES_FOLDER/redshift/ $CONFIG_FOLDER/redshift/
