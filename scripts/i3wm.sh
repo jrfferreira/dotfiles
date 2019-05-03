@@ -23,6 +23,9 @@ sudo rfkill unblock bluetooth
 sudo pacman --noconfirm -S i3-gaps
 sudo pacman --noconfirm -S i3status
 sudo pacman --noconfirm -S i3exit
+sudo pacman --noconfirm -S i3blocks
+sudo pacman --noconfirm -S rofi
+sudo pacman --noconfirm -S dunst
 sudo pacman --noconfirm -S perl-anyevent-i3
 sudo pacman --noconfirm -S pa-applet
 sudo pacman --noconfirm -S pulseaudio-alsa
@@ -48,7 +51,7 @@ git clone https://github.com/vivien/i3blocks-contrib ~/.local/src/i3blocks-contr
 mv ~/.i3 ~/.i3.bkp
 mv ~/.conkyrc ~/.conkyrc.bkp
 mv ~/.Xresources ~/.Xresources.bkp
-mv $CONFIG_FOLDER/i3 $CONFIG_FOLDER/i3
+mv $CONFIG_FOLDER/i3 $CONFIG_FOLDER/i3.bkp
 mv $CONFIG_FOLDER/i3blocks/ $CONFIG_FOLDER/i3blocks.bkp
 mv $CONFIG_FOLDER/rofi/ $CONFIG_FOLDER/rofi.bkp
 mv $CONFIG_FOLDER/dunst/ $CONFIG_FOLDER/dunst.bkp
