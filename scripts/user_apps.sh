@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 DOTFILES_FOLDER=$PARENT_FOLDER/dotfiles
 CONFIG_FOLDER=~/.config
 # themes and fonts
@@ -10,7 +12,6 @@ sudo pacman --noconfirm -S noto-fonts-emoji
 
 # apps
 sudo pacman -R xterm
-sudo pacman --noconfirm -S terminator
 sudo pacman --noconfirm -S bat
 sudo pacman --noconfirm -S fzf
 sudo pacman --noconfirm -S prettyping
@@ -26,3 +27,6 @@ sudo snap install --classic skype
 
 sudo pacman --noconfirm -S redshift
 ln -s $DOTFILES_FOLDER/redshift/ $CONFIG_FOLDER/redshift/
+
+sudo pacman --noconfirm -S terminator
+ln -s $DOTFILES_FOLDER/terminator/ $CONFIG_FOLDER/terminator

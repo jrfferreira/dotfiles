@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 # nordvpn
 git clone https://aur.archlinux.org/nordvpn-bin.git
 cd nordvpn-git

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 PARENT_FOLDER=~/Code
 DOTFILES_FOLDER=$PARENT_FOLDER/dotfiles
 

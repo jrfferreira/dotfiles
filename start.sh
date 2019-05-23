@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 GREEN='\e[32m'
 NC='\e[0m' # No Color
 

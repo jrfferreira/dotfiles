@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -e
+
 PARENT_FOLDER=~/Code
 DOTFILES_FOLDER=$PARENT_FOLDER/dotfiles
 CONFIG_FOLDER=~/.config
@@ -51,6 +53,8 @@ sudo pacman --noconfirm -S nitrogen
 git clone https://github.com/vivien/i3blocks-contrib ~/.local/src/i3blocks-contrib
 
 # Linking configs
+set +e
+
 mv ~/.i3 ~/.i3.bkp
 mv ~/.conkyrc ~/.conkyrc.bkp
 mv ~/.Xresources ~/.Xresources.bkp
@@ -58,7 +62,8 @@ mv $CONFIG_FOLDER/i3 $CONFIG_FOLDER/i3.bkp
 mv $CONFIG_FOLDER/i3blocks/ $CONFIG_FOLDER/i3blocks.bkp
 mv $CONFIG_FOLDER/rofi/ $CONFIG_FOLDER/rofi.bkp
 mv $CONFIG_FOLDER/dunst/ $CONFIG_FOLDER/dunst.bkp
-mv $CONFIG_FOLDER/terminator/ $CONFIG_FOLDER/terminator.bkp
+
+set -e
 
 ln -s $DOTFILES_FOLDER/conky/config ~/.conkyrc
 ln -s $DOTFILES_FOLDER/compton/.Xresources ~/.Xresources
@@ -66,7 +71,6 @@ ln -s $DOTFILES_FOLDER/i3 $CONFIG_FOLDER/i3
 ln -s $DOTFILES_FOLDER/i3blocks/ $CONFIG_FOLDER/i3blocks
 ln -s $DOTFILES_FOLDER/rofi/ $CONFIG_FOLDER/rofi
 ln -s $DOTFILES_FOLDER/dunst/ $CONFIG_FOLDER/dunst
-ln -s $DOTFILES_FOLDER/terminator/ $CONFIG_FOLDER/terminator
 ln -s $DOTFILES_FOLDER/pulse/client.conf $CONFIG_FOLDER/pulse/client.conf
 
 # sudo cp $DOTFILES_FOLDER/compton/.Backlight /usr/share/X11/xorg.conf.d/20-intel.conf
