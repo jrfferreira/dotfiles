@@ -14,6 +14,7 @@ sudo pacman --noconfirm -S go
 sudo pacman --noconfirm -S rustup
 rustup toolchain install stable
 rustup default stable
+rustup component add rustfmt
 
 ###############################################
 # Python                                      #

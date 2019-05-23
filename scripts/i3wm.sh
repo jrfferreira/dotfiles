@@ -28,11 +28,14 @@ sudo pacman --noconfirm -S rofi
 sudo pacman --noconfirm -S dunst
 sudo pacman --noconfirm -S perl-anyevent-i3
 sudo pacman --noconfirm -S pa-applet
+sudo pacman --noconfirm -S network-manager-applet
 sudo pacman --noconfirm -S pulseaudio-alsa
 sudo pacman --noconfirm -S playerctl
 sudo pacman --noconfirm -S pavucontrol
+sudo pacman --noconfirm -S xautolock
 sudo pacman --noconfirm -S light-locker
 sudo pacman --noconfirm -S maim
+sudo pacman --noconfirm -S xclip
 sudo pacman --noconfirm -S nitrogen
 
 
