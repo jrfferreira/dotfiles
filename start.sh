@@ -18,6 +18,12 @@ confirm_and_install() {
 sudo pacman-optimize && sync
 sudo pacman -Syu
 
+setxkbmap -option 'ctrl:nocaps'
+
+# essentials
+sudo pacman --noconfirm -S make
+sudo pacman --noconfirm -S gcc
+
 # ssh-agent
 sudo pacman --noconfirm -S keychain
 
