@@ -26,7 +26,9 @@ sudo snap install --classic slack
 sudo snap install --classic skype
 
 sudo pacman --noconfirm -S redshift
+mv $CONFIG_FOLDER/redshift $CONFIG_FOLDER/redshift.bpk
 ln -s $DOTFILES_FOLDER/redshift/ $CONFIG_FOLDER/redshift/
 
 sudo pacman --noconfirm -S terminator
+mv $CONFIG_FOLDER/terminator $CONFIG_FOLDER/terminator.bpk
 ln -s $DOTFILES_FOLDER/terminator/ $CONFIG_FOLDER/terminator
