@@ -23,6 +23,7 @@ setxkbmap -option 'ctrl:nocaps'
 # essentials
 sudo pacman --noconfirm -S make
 sudo pacman --noconfirm -S gcc
+sudo pacman --noconfirm -S jq
 
 # ssh-agent
 sudo pacman --noconfirm -S keychain

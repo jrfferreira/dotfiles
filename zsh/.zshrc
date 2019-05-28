@@ -63,6 +63,9 @@ alias emacs=emacsclient -t
 alias terminal=terminator
 alias c="clear && printf '\e[3J'"
 
+# work alias
+alias dcontrol="~/Code/BISYS/python/dqueue/utils/dcontrol"
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
