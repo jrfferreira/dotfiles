@@ -50,3 +50,7 @@ sudo pacman --noconfirm -S eslint
 sudo pacman --noconfirm -S prettier
 zsh -c 'nvm install stable && nvm use stable \
 && npm install -g flow flow-bin typescript tern eslint prettier babel-eslint eslint-plugin-react js-beautify eslint-plugin-mocha eslint-plugin-flowtype eslint-plugin-jasmine eslint-plugin-jsx-control-statements eslint-plugin-promise eslint-plugin-jest eslint-plugin-import eslint-plugin-prettier eslint-config-prettier'
+
+# If error node_modules/jpegtran-bin/vendor/jpegtran ENOENT:
+# Check issue - https://github.com/imagemin/imagemin/issues/154
+# npm rebuild jpegtran-bin
