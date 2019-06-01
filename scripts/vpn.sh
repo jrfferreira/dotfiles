@@ -1,11 +1,17 @@
 #!/bin/bash
 
+# nordvpn
+set +e
+
+git clone https://aur.archlinux.org/nordvpn-bin.git
+
 set -e
 
-# nordvpn
-git clone https://aur.archlinux.org/nordvpn-bin.git
-cd nordvpn-git
+cd nordvpn-bin
+
 makepkg -scCi
 
 systemctl enable nordvpnd.service
 systemctl start nordvpnd.service
+
+rm -rf nordvpn-bin
