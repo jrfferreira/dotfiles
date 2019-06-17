@@ -9,9 +9,12 @@ set -e
 
 cd nordvpn-bin
 
+sudo pacman -S --noconfirm fakeroot
+
 makepkg -scCi
 
-systemctl enable nordvpnd.service
-systemctl start nordvpnd.service
+sudo systemctl enable --now nordvpnsd
+systemctl --user enable --now nordvpnud
 
-rm -rf nordvpn-bin
+sudo systemctl enable nordvpnd.service
+systemctl start nordvpnd.service
