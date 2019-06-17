@@ -62,6 +62,7 @@ alias ping=prettyping
 alias emacs=emacsclient -t
 alias terminal=terminator
 alias c="clear && printf '\e[3J'"
+alias rec="terminalizer record"
 
 # work alias
 alias dcontrol="~/Code/BISYS/python/dqueue/utils/dcontrol"
