@@ -56,3 +56,13 @@ sudo npm install -g terminalizer
 # If error node_modules/jpegtran-bin/vendor/jpegtran ENOENT:
 # Check issue - https://github.com/imagemin/imagemin/issues/154
 # npm rebuild jpegtran-bin
+
+
+###############################################
+# MariaDB                                     #
+###############################################
+
+# https://wiki.archlinux.org/index.php/MariaDB
+
+sudo pacman --noconfirm -S mariadb
+mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
