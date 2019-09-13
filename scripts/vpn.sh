@@ -1,20 +1,23 @@
 #!/bin/bash
 
 # nordvpn
-set +e
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+    set +e
+    git clone https://aur.archlinux.org/nordvpn-bin.git
+    set -e
 
-git clone https://aur.archlinux.org/nordvpn-bin.git
+    cd nordvpn-bin
 
-set -e
+    sudo pacman -S --noconfirm fakeroot
 
-cd nordvpn-bin
+    makepkg -scCi
 
-sudo pacman -S --noconfirm fakeroot
+    sudo systemctl enable --now nordvpnsd
+    systemctl --user enable --now nordvpnud
 
-makepkg -scCi
+    sudo systemctl enable nordvpnd.service
+    systemctl start nordvpnd.service
 
-sudo systemctl enable --now nordvpnsd
-systemctl --user enable --now nordvpnud
-
-sudo systemctl enable nordvpnd.service
-systemctl start nordvpnd.service
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    brew cask install nordvpn
+fi
