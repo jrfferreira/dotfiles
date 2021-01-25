@@ -37,6 +37,9 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     # git clone https://github.com/pyenv/pyenv.git ~/.pyenv
     curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | zsh
 
+    # pyenv-virtualenvwrapper
+    git clone https://github.com/pyenv/pyenv-virtualenvwrapper.git $(pyenv root)/plugins/pyenv-virtualenvwrapper
+    
     # common dependencies
     sudo pacman --noconfirm -S python-virtualenv
     sudo pacman --noconfirm -S python-virtualenvwrapper
@@ -48,6 +51,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     brew install pyenv
     brew install mypy
     brew install black
+    brew install pyenv-virtualenvwrapper
 fi
 
 pyenv install 3.6.8
@@ -77,7 +81,8 @@ fi
 
 # global node modules
 zsh -c 'nvm install stable && nvm use stable \
-&& npm install -g flow flow-bin typescript tern eslint prettier babel-eslint eslint-plugin-react js-beautify eslint-plugin-mocha eslint-plugin-flowtype eslint-plugin-jasmine eslint-plugin-jsx-control-statements eslint-plugin-promise eslint-plugin-jest eslint-plugin-import eslint-plugin-prettier eslint-config-prettier'
+&& npm install -g flow flow-bin typescript tern eslint prettier babel-eslint eslint-plugin-react js-beautify eslint-plugin-mocha eslint-plugin-flowtype eslint-plugin-jasmine eslint-plugin-jsx-control-statements eslint-plugin-promise eslint-plugin-jest eslint-plugin-import eslint-plugin-prettier eslint-config-prettier \
+&& npm config set ignore-scripts true'
 
 sudo npm install -g terminalizer
 
@@ -95,4 +100,7 @@ sudo npm install -g terminalizer
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
    sudo pacman --noconfirm -S mariadb
    mysql_install_db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    brew install mysql
+    mysql_secure_installation
 fi
