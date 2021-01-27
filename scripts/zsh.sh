@@ -2,17 +2,22 @@
 
 set -e
 
-PARENT_FOLDER=~/Code
+PARENT_FOLDER="~/Code"
 DOTFILES_FOLDER=$PARENT_FOLDER/dotfiles
 
 # ZSH
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
-    sudo pacman --noconfirm -S zsh
-    sudo pacman --noconfirm -S bat
-    sudo pacman --noconfirm -S fzf
-    sudo pacman --noconfirm -S prettyping
-    sudo pacman --noconfirm -S netcat
-    sudo pacman --noconfirm -S the_silver_searcher
+    sudo apt-get install -y curl
+    sudo apt-get install -y zsh
+    sudo apt-get install -y bat
+    sudo apt-get install -y fzf
+    sudo apt-get install -y prettyping
+    sudo apt-get install -y netcat
+    sudo apt-get install -y silversearcher-ag
+
+    mkdir -p ~/.local/bin
+    ln -s /usr/bin/batcat ~/.local/bin/bat
+
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     brew install zsh
     brew install ag

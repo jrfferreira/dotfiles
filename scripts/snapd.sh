@@ -3,6 +3,6 @@
 set -e
 
 # snap repo
-sudo pacman --noconfirm -S snapd
+sudo apt install snapd
 sudo systemctl enable snapd
 sudo systemctl start snapd

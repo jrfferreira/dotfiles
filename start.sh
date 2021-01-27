@@ -15,22 +15,9 @@ confirm_and_install() {
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
     # optimizing and updating pacman
-    sudo pacman-optimize && sync
-    sudo pacman -Syu
+    sudo apt-get update && sudo apt-get -y upgrade
 
     setxkbmap -option 'ctrl:nocaps'
-
-    # essentials
-    sudo pacman --noconfirm -S make
-    sudo pacman --noconfirm -S gcc
-    sudo pacman --noconfirm -S jq
-    sudo pacman --noconfirm -S gconf
-
-    # ssh-agent
-    sudo pacman --noconfirm -S keychain
-
-    # common request libs
-    sudo pacman --noconfirm -S unixodbc
 
     confirm_and_install "snapd" ./scripts/snapd.sh
 

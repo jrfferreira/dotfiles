@@ -108,7 +108,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     export EDITOR="/usr/local/bin/emacsclient -nc --socket-name=main"
 fi
 
-export PATH="$PYENV_ROOT/bin:$PYENV_ROOT/shims:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$GOPATH/bin:$GOROOT/bin:$HOME/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$PYENV_ROOT/bin:$PYENV_ROOT/shims:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$HOME/.local/bin:$GOPATH/bin:$GOROOT/bin:$HOME/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 
 eval "$(pyenv init -)"
