@@ -2,10 +2,9 @@
 
 # docker
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
-    sudo pacman --noconfirm -S docker
-    sudo systemctl enable docker
-    sudo systemctl start docker
-
+    sudo apt install docker.io
+    sudo systemctl enable --now docker
+    
     sudo groupadd docker
     sudo gpasswd -a $USER docker
     newgrp docker
