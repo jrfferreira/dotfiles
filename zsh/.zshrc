@@ -63,16 +63,10 @@ alias cat=bat
 alias ping=prettyping
 #alias emacs=emacsclient -t
 
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
-    alias terminal=terminator
-fi
-
 alias short="dig txt +short"
 alias c="clear && printf '\e[3J'"
 alias rec="terminalizer record"
-
-# work alias
-alias dcontrol="~/Code/BISYS/python/dqueue/utils/dcontrol"
+alias python="python3"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -102,11 +96,8 @@ export VIRTUALENVWRAPPER_PYTHON=$PYENV_ROOT/shims/python
 # Emacs
 source  ~/Code/dotfiles/scripts/emacs-commands.sh
 
-if [[ "$OSTYPE" == "linux-gnu" ]]; then
-    export EDITOR="emacsclient -nc --socket-name=main"
-elif [[ "$OSTYPE" == "darwin"* ]]; then
-    export EDITOR="/usr/local/bin/emacsclient -nc --socket-name=main"
-fi
+export EDITOR=$HOME/Code/dotfiles/scripts/safe_editor
+export VISUAL=$HOME/Code/dotfiles/scripts/safe_editor
 
 export PATH="$PYENV_ROOT/bin:$PYENV_ROOT/shims:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:$HOME/.local/bin:$GOPATH/bin:$GOROOT/bin:$HOME/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 

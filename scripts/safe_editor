@@ -1,0 +1,12 @@
+#!/bin/sh
+# safe_editor
+
+if [ -x "$(command -v emacsclient)" ]; then
+    emacsclient $@
+elif [ -x "$(command -v emacs)" ]; then
+    emacs $@
+elif [ -x "$(command -v code)" ]; then
+    code $@ 
+else
+    vi $@
+fi

@@ -11,24 +11,17 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     sudo apt install fonts-firacode
 
     # apps
-    apt-get install zsh
-    apt-get install bat
-    apt-get install fzf
-    apt-get install prettyping
-    apt-get install netcat
-    apt-get install silversearcher-ag
+    apt-get install -y zsh
+    apt-get install -y bat
+    apt-get install -y fzf
+    apt-get install -y prettyping
+    apt-get install -y netcat
+    apt-get install -y silversearcher-ag
 
     sudo snap install telegram-desktop spotify gravit-designer mattermost-desktop chromium
     sudo snap install --classic slack
     sudo snap install --classic skype
-
-    apt-get install redshift
-    mv $CONFIG_FOLDER/redshift $CONFIG_FOLDER/redshift.bpk
-    ln -s $DOTFILES_FOLDER/redshift/ $CONFIG_FOLDER/redshift/
-
-    apt-get install terminator
-    mv $CONFIG_FOLDER/terminator $CONFIG_FOLDER/terminator.bpk
-    ln -s $DOTFILES_FOLDER/terminator/ $CONFIG_FOLDER/terminator
+    sudo snap install --classic code
 
 elif [[ "$OSTYPE" == "darwin"* ]]; then
 

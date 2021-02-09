@@ -14,8 +14,8 @@ set -e
 
 # emacs
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
-    sudo pacman --noconfirm -Sy emacs
-    systemctl --user enable --now emacs
+    sudo apt install snapd
+    sudo snap install emacs --classic
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     brew tap railwaycat/emacsmacport
     brew cask install emacs
