@@ -37,11 +37,12 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     set +e
     xcode-select --install
+    sudo xcodebuild -license accept
     /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     set -e
 
-    brew tap caskroom/cask
-    brew tap caskroom/versions
+    brew tap homebrew/cask
+    brew tap homebrew/cask-versions
 
     brew install coreutils
 fi

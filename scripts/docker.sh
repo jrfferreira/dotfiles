@@ -10,5 +10,5 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     sudo gpasswd -a $USER docker
     newgrp docker
 elif [[ "$OSTYPE" == "darwin"* ]]; then
-    brew cask install docker
+    brew install docker
 fi

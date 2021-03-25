@@ -46,27 +46,30 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     brew install fzf
 
     set +e
-    brew tap caskroom/fonts
-    brew cask install font-fira-mono
-    brew cask install font-fira-code
-    brew cask install font-fira-mono-for-powerline
-    brew cask install font-source-code-pro
+    brew tap homebrew/cask-fonts
+    brew install font-fira-mono
+    brew install font-fira-code
+    brew install font-fira-mono-for-powerline
+    brew install font-source-code-pro
 
-    brew cask install iterm2
-    brew cask install firefox
-    brew cask install chrome
-    brew cask install sketch
+    brew install visual-studio-code
+    brew install iterm2
+    brew install firefox
+    brew install chrome
+    brew install sketch
+    brew install alfred
+    brew install karabiner-elements
 
     # usability
-    brew cask install spectacle
-    brew cask install authy
-    brew cask install istat-menus
+    brew install spectacle
+    brew install authy
+    brew install istat-menus
 
     # fun
-    brew cask install spotify
-    brew cask install vlc
-    brew cask install webtorrent
-    brew cask install skype
-    brew cask install wireshark
+    brew install spotify
+    # brew cask install vlc
+    # brew cask install webtorrent
+    # brew cask install skype
+    # brew cask install wireshark
     set -e
 fi

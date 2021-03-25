@@ -18,7 +18,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     systemctl --user enable --now emacs
 elif [[ "$OSTYPE" == "darwin"* ]]; then
     brew tap railwaycat/emacsmacport
-    brew cask install emacs
+    brew install emacs
 fi
 
 ln -s $PARENT_FOLDER/emacs-config ~/.emacs.d
