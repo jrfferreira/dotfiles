@@ -61,15 +61,14 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     brew install karabiner-elements
 
     # usability
-    brew install spectacle
-    brew install authy
+    brew install --cask rectangle
     brew install istat-menus
 
     # fun
     brew install spotify
-    # brew cask install vlc
-    # brew cask install webtorrent
-    # brew cask install skype
-    # brew cask install wireshark
+    brew install --cask vlc
+    brew install --cask webtorrent
+    brew install --cask skype
+    # brew install --cask wireshark
     set -e
 fi

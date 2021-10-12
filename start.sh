@@ -48,14 +48,14 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 
 confirm_and_install "User apps, themes and fonts" ./scripts/user_apps.sh
-confirm_and_install "pkgfile" ./scripts/pkgfile.sh
+#confirm_and_install "pkgfile" ./scripts/pkgfile.sh
 confirm_and_install "docker" ./scripts/docker.sh
 confirm_and_install "zsh" ./scripts/zsh.sh
-confirm_and_install "emacs" ./scripts/emacs.sh
+#confirm_and_install "emacs" ./scripts/emacs.sh
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
     confirm_and_install "i3wm" ./scripts/i3wm.sh
 fi
 
 confirm_and_install "languages (Go, Python, JS)" ./scripts/languages.sh
-confirm_and_install "nordvpn CLI" ./scripts/vpn.sh
+#confirm_and_install "nordvpn CLI" ./scripts/vpn.sh
