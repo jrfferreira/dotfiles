@@ -56,19 +56,21 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     brew install iterm2
     brew install firefox
     brew install chrome
-    brew install sketch
+    # brew install sketch
     brew install alfred
     brew install karabiner-elements
+    brew install motrix
 
     # usability
     brew install --cask rectangle
-    brew install istat-menus
+    ## brew install istat-menus
 
     # fun
     brew install spotify
     brew install --cask vlc
     brew install --cask webtorrent
     brew install --cask skype
+    brew install discord
     # brew install --cask wireshark
     set -e
 fi
